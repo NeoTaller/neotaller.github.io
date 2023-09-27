@@ -1,7 +1,7 @@
 import { useRoutes, BrowserRouter } from 'react-router-dom';
-import { Home } from './assets/pages/Home';
-import { Tienda } from './assets/pages/Tienda';
-import { Detalle } from './assets/pages/Detalle';
+import { Home } from './assets/pages/Home/Home';
+import { Tienda } from './assets/pages/Tienda/Tienda';
+import { Detalle } from './assets/pages/Detalle/Detalle';
 import './App.css'
 
 const AppRoutes = () => {

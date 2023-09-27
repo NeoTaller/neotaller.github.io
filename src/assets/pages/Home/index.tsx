@@ -1,8 +1,8 @@
-import { Header } from '../components/Header';
-import { Footer } from '../components/Footer';
-import { CategoryCard } from '../components/CategoryCard';
-import { ProductCard } from '../components/ProductCard';
-import { ArtistCard } from '../components/ArtistCard';
+import { Header } from '../../components/Header';
+import { Footer } from '../../components/Footer';
+import { CategoryCard } from '../../components/CategoryCard';
+import { ProductCard } from '../../components/ProductCard';
+import { ArtistCard } from '../../components/ArtistCard';
 import defaultImg from '../img/defaultImg.png';
 
 

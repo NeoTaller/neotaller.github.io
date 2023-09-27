@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './index.css';
 
 interface ProductsInterface{
@@ -13,7 +14,9 @@ export function ProductCard (product: ProductsInterface) {
     <div className="card-products">
       <span className='card-products--like'>❤️</span>
       <img className='card-products--img' src={product.rutaImg} alt="" />
-      <a href="#/Detalle"><h3 className='card-products--title'>{product.title}</h3></a>
+      <h3 className='card-products--title'>
+        <Link to={'/detalle'}>{product.title}</Link>
+      </h3>
       <p className='card-products--desc'>{product.description}</p>
       <section className='card-products--shopInfo'>
         <p className="card-products--price">{'$ '+ product.price}</p>

@@ -1,15 +1,18 @@
+import { Link } from 'react-router-dom'
 import './index.css'
 
 export function Header(){
   return (
     <header>
     <div>
-    <a className='logo' href="/">Logo</a>
+    <Link className='logo' to={"/"}>Logo</Link>
     </div>
     <nav>
       <ul>
-        <li><a href="#/Tienda">Tienda</a></li>
-        <li><a href="#">Artitas</a></li>
+        <li>
+          <Link to={"/tienda"}>Tienda</Link>
+        </li>
+        <li><a href="#">Artistas</a></li>
         <li><a href="#">Contacto</a></li>
         <li><a href="#">Nosotros</a></li>
       </ul>

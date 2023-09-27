@@ -6,8 +6,8 @@ import './App.css'
 
   const routes = createHashRouter([
     { path: '/', element: <Home />},
-    { path: '/Tienda', element: <Tienda />},
-    { path: '/Detalle', element: <Detalle />}
+    { path: '/tienda', element: <Tienda />},
+    { path: '/detalle', element: <Detalle />}
   ]);
 
 function App() {

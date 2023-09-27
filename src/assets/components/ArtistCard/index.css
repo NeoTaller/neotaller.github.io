@@ -1,0 +1,30 @@
+.card-artista{
+  width: 135px ;
+  height: 173px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card-artista--img{
+  background-color: var(--bg-300);
+  width: 135px;
+  height: 135px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.card-artista--img:hover{
+  background-color: var(--bg-200);
+  scale: 1.05;
+}
+
+
+.card-artista--img img{
+  width: 80%;
+}

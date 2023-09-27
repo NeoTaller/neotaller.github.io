@@ -8,7 +8,7 @@ export function Header(){
     </div>
     <nav>
       <ul>
-        <li><a href="/Tienda">Tienda</a></li>
+        <li><a href="#/Tienda">Tienda</a></li>
         <li><a href="#">Artitas</a></li>
         <li><a href="#">Contacto</a></li>
         <li><a href="#">Nosotros</a></li>

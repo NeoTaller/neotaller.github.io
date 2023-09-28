@@ -48,17 +48,20 @@ nav ul li a{
 }
 
 .header-right ul li{
-  padding: 0 16px;
-  
-}
-
-.header-right ul li a{
-  text-decoration: none;
+  height: 36px;
+  min-height: 36px;
+  width: 36px;
+  min-width: 36px;
+  margin: 0 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--bg-200);
   border-radius: 50%;
-  display: block;
-  height: 36px;
-  width: 36px;
-  text-align: center;
-  line-height: 2rem;
+  line-height: 0.7rem;
+}
+
+.icon{
+  width: 22px;
+  height: 22px;
 }

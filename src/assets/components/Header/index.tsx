@@ -1,4 +1,8 @@
 import { Link } from 'react-router-dom'
+import  searchIcon from '../../icons/icon _search normal 1_.svg'
+import translateIcon from '../../icons/icon _translate_.svg'
+import userIcon from '../../icons/icon _user_.svg'
+import cartIcon from '../../icons/shopping-cart-badged.svg'
 import './index.css'
 
 export function Header(){
@@ -19,10 +23,10 @@ export function Header(){
     </nav>
     <section className='header-right'>
       <ul>
-        <li><a href="#">🔎</a></li>
-        <li><a href="#">🔠</a></li>
-        <li><a href="#">👤</a></li>
-        <li><a href="#">🛒</a></li>
+        <li><a href="#"><img className='icon' src={searchIcon} alt="Buscar" /></a></li>
+        <li><a href="#"><img className='icon' src={translateIcon} alt="Traducir" /></a></li>
+        <li><a href="#"><img className='icon' src={userIcon} alt="Usuario" /></a></li>
+        <li><a href="#"><img className='icon' src={cartIcon} alt="Carro" /></a></li>
       </ul>
     </section>
   </header>)

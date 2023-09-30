@@ -1,4 +1,5 @@
 :root{
+  /* Colores wireframe baja */
   --bg-50:  #f8fafc;
   --bg-100: #f1f5f9;
   --bg-200: #e2e8f0;
@@ -10,6 +11,12 @@
   --bg-800: #1e293b;
   --bg-900: #0f172a;
   --bg-950: #020617;
+  /* Colores UIKit */
+  --color1: #682196;
+  --color2: #f53e7f;
+  --color3: #C6E957;
+  --color4: #FFFFFF;
+  --color5: #000000;
 }
 
 * {

@@ -4,6 +4,7 @@ import { CategoryCard } from '../../components/CategoryCard';
 import { ProductCard } from '../../components/ProductCard';
 import { ArtistCard } from '../../components/ArtistCard';
 import defaultImg from '../../img/defaultImg.png';
+import './index.css'
 
 
 const Home = () => {

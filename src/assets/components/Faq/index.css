@@ -1,0 +1,29 @@
+.faq-title{
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  margin-bottom: 16px;
+}
+
+.faq-title span{
+  cursor: pointer;
+  margin-left: 16px;
+}
+
+p {
+  margin: 16px 0;
+}
+
+.abajo{
+  transition: rotate 150ms;
+  rotate: 90deg;
+}
+
+.derecha{
+  transition: rotate 150ms;
+  rotate: 0deg;
+}
+
+.ocultar{
+  display: none;
+}

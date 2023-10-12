@@ -9,7 +9,7 @@
 
 footer{
   height: 376px;
-  background-color: var(--bg-700);
+  background-color: var(--bg-500);
   display: flex;
   justify-content: space-between;
   padding: 56px 150px;
@@ -26,7 +26,7 @@ footer{
 .footer-info p{
   width: 50%;
   line-height: 2rem;
-  color: var(--bg-500);
+  color: var(--bg-100);
 }
 
 .footer-menu{

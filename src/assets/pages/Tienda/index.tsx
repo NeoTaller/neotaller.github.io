@@ -1,5 +1,3 @@
-import { Header } from "../../components/Header";
-import { Footer } from "../../components/Footer";
 import { SideBar } from "../../components/SideBar"
 import { ProductCard } from "../../components/ProductCard";
 import defaultImg from '../../img/defaultImg.png';
@@ -9,7 +7,6 @@ const Tienda = () => {
 
   return(
     <>
-      <Header></Header>
       <main className="mainTienda">
         <SideBar></SideBar>
         <section className="productos">
@@ -67,7 +64,6 @@ const Tienda = () => {
           </section>
         </section>
       </main>
-      <Footer></Footer>
     </>
   )
 }

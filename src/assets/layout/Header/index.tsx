@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import  searchIcon from '../../icons/icon _search normal 1_.svg'
 import translateIcon from '../../icons/icon _translate_.svg'
 import userIcon from '../../icons/icon _user_.svg'
@@ -9,16 +9,25 @@ export function Header(){
   return (
     <header>
     <div>
-    <Link className='logo' to={"/"}>Logo</Link>
+      <p className='logo headline1'>Logo</p>
     </div>
     <nav>
       <ul>
         <li>
-          <Link to={"/tienda"}>Tienda</Link>
+          <NavLink to={'/'} className={'headline2'}>Home</NavLink>
         </li>
-        <li><a href="#">Artistas</a></li>
-        <li><a href="#">Contacto</a></li>
-        <li><a href="#">Nosotros</a></li>
+        <li>
+          <NavLink to={"/tienda" } className={'headline2'}>Tienda</NavLink>
+        </li>
+        <li>
+          <NavLink to={'/artistas'} className={'headline2'}>Artistas</NavLink>
+        </li>
+        <li>
+          <NavLink to={'/contacto'} className={'headline2'}>Contacto</NavLink>
+        </li>
+        <li>
+          <NavLink to={'/nosotros'} className={'headline2'}>Nosotros</NavLink>
+        </li>
       </ul>
     </nav>
     <section className='header-right'>

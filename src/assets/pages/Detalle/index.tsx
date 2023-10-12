@@ -1,5 +1,5 @@
-import { Header } from "../../components/Header";
-import { Footer } from "../../components/Footer";
+import { Header } from "../../layout/Header";
+import { Footer } from "../../layout/Footer";
 import { ProductCard } from "../../components/ProductCard";
 import { ProductoDetailInfo } from "../../components/ProductDetailInfo";
 import defaultImg from '../../img/defaultImg.png';

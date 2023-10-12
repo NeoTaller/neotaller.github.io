@@ -3,7 +3,7 @@ import defaultImg from '../../img/defaultImg.png'
 import { Link } from 'react-router-dom'
 const Nosotros = () => {
   return (
-    <main>
+    <main className='nosotros-main'>
       <section className='nosotros-title'>
         <h2 className='headline1'>Nosotros</h2>
       </section>

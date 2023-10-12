@@ -1,5 +1,4 @@
 
-
 .nosotros-title{
   padding: 0 120px;
   height: 210px;
@@ -12,6 +11,7 @@
 
 
 .grid-container{
+  max-width: 1200px;
   display: grid;
   grid-template-columns: repeat(2, minmax(588px, 1fr));
   place-items: center;

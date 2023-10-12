@@ -7,7 +7,7 @@ import './index.css'
 
 const Home = () => {
   return (
-    <main>
+    <main className='home-main'>
       <section className='hero'>
         <span className='hero-larrow'>{'<'}</span>
         <div className='hero-info'>

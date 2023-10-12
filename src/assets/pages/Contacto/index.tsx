@@ -11,7 +11,7 @@ import clockIco from '../../icons/circle-clock.svg'
 const Contacto = () => {
 
   return (
-    <main>
+    <main className='contacto-main'>
       <div className='contacto-title'>
         <h2 className='headline1'>Contacto</h2>
       </div>

@@ -26,7 +26,7 @@ const Artistas = () => {
     <main className="artistas-main">
       <h2 className='artistas-title headline1'>Artistas</h2>
       {
-        artistasObj.map((a) => (<span className="cuadrado p1"><ArtistCard rutaImg={a.rutaImg} name={a.name}/></span>
+        artistasObj.map((a) => (<span className="cuadrado"><ArtistCard rutaImg={a.rutaImg} name={a.name}/></span>
         ))
       }
     </main>

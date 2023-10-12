@@ -1,7 +1,10 @@
 .mainTienda{
   display: flex;
+  flex-direction: row;
   align-items: flex-start;
   justify-content: space-evenly;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .productos{

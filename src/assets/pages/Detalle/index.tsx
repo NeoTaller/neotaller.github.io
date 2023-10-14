@@ -9,7 +9,6 @@ const Detalle = () => {
 
   return(
     <>
-      <Header></Header>
       <main className="detalle">
         <ProductoDetailInfo />
         <section className="detalle-relacionado">
@@ -30,7 +29,6 @@ const Detalle = () => {
           </div>
         </section>
       </main>
-      <Footer></Footer>
     </>
   )
 }

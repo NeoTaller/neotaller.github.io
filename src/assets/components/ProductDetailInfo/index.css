@@ -1,22 +1,23 @@
 .pd-container{
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  margin-top: 72px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(78px, 1fr));
+  column-gap: 24px;
   height: 800px;
+  max-width: 1200px;
 }
 
 .pd-container-imgs{
+  grid-column: 1/8;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 70%;
-  max-width: 720px;
 }
 
 .carrusel{
   height: 200px;
-  width: 80%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -30,24 +31,25 @@
   color: var(--bg-400);
   border: 2px solid var(--bg-400);
   text-align: center;
-  line-height: 1.4rem;
+  line-height: 1.2rem;
   border-radius: 50%;
   cursor: pointer;
 }
 
+.principal{
+  width: 400px;
+}
 .miniatura{
   width: 150px;
 }
 
 .pd-container-info{
-  width: 600px;
-  height: 90%;
-  position: relative;
+  grid-column: 8/13;
 }
 
 .container-info-like{
   position: absolute;
-  right: 24px;
+  right: 444px;
   background-color: var(--bg-300);
   border-radius: 50%;
   width: 28px;
@@ -59,12 +61,12 @@
 .pd-container-info h2{
   font-weight: bold;
   font-size: 32px;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .info-talla{
   font-weight: bold;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .info-precio{
@@ -111,7 +113,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin: 8px 0;
+  margin-top: 8px;
 }
 
 .politica-envio a,
@@ -146,10 +148,35 @@
 
 .info-specs{
   margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
 }
+
 .info-specs h3{
-  font-weight: bold;
   padding: 16px 0;
+}
+
+
+.info-specs h4{
+  width: 88px;
+}
+
+.info-specs--condition,
+.info-specs--measure, 
+.info-specs--material{
+  display: flex;
+  align-items: center;
+  /* gap: 24px; */
+}
+
+.info-specs--measure aside{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 16px;
+  margin-left: 16px;
 }
 
 .tag{
@@ -164,57 +191,32 @@
 }
 
 .pd-ilustrador{
+  grid-column: 8/13;
+  height: 56px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.pd-ilustrador-tag{
+  margin-right: 44px;
+}
+
+.pd-ilustrador-fig{
   background-color: var(--bg-300);
-  padding: 16px;
-  width: 500px;
-  height: 147px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.artista-perfil{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-}
-
-.artista-perfil p{
-  font-weight: bold;
-}
-
-.artista-perfil-img{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.artista-perfil-img p{
-  font-weight: normal;
-}
-.artista-perfil-img figure{
-  width: 60px;
-  height: 60px;
-  background-color: var(--bg-400);
+  height: 56px;
+  width: 56px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 8px;
+  margin-right: 28px;
 }
 
-.artista-perfil-img figure img{
+.pd-ilustrador-fig img{
   width: 36px;
 }
 
-.artista-coleccion{
-  width: 150px;
-  height: 40px;
-  background-color: var(--bg-500);
-  border-style: none;
-  color: var(--bg-100);
-  font-weight: bold;
+.pd-ilustrador-name{
   cursor: pointer;
 }

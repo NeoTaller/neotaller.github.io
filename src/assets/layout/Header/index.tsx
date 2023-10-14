@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import  searchIcon from '../../icons/icon _search normal 1_.svg'
 import translateIcon from '../../icons/icon _translate_.svg'
 import userIcon from '../../icons/icon _user_.svg'
@@ -35,7 +35,7 @@ export function Header(){
         <li><a href="#"><img className='icon' src={searchIcon} alt="Buscar" /></a></li>
         <li><a href="#"><img className='icon' src={translateIcon} alt="Traducir" /></a></li>
         <li><a href="#"><img className='icon' src={userIcon} alt="Usuario" /></a></li>
-        <li><a href="#"><img className='icon' src={cartIcon} alt="Carro" /></a></li>
+        <li><Link to={'/carrito'}><img className='icon' src={cartIcon} alt="Carro" /></Link></li>
       </ul>
     </section>
   </header>)

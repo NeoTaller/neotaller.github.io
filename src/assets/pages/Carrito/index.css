@@ -1,0 +1,123 @@
+.carrito{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+.carrito-content{
+  margin: 100px 120px ;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(78px,1fr));
+  gap: 24px;
+}
+
+.carrito-content-title{
+ grid-column: 1/13;
+}
+.carrito-content--products{
+  grid-column: 1/8;
+}
+
+.carrito-content--summary{
+  grid-column: 8/13;
+  background-color: var(--bg-400);
+  padding: 23px 35px;
+}
+
+.divider{
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: black;
+  margin: 24px 0;
+}
+
+.summary-input{
+  height: 48px;
+  width: 100%;
+  padding-left: 16px;
+}
+
+.despacho-precio{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px 0;
+}
+
+.subtotal{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summary-benefits{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 48px;
+}
+
+.aportes{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 86px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.aportes figure{
+  width: 110px;
+  height: 86px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 12px;
+}
+
+.aportes figure p{
+  text-align: center;
+}
+
+.summary-cards-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 24px 0;
+  margin-bottom: 48px;
+}
+
+.boton {
+  display: block;
+  height: 48px;
+  width: 100%;
+  margin: 16px 0;
+  text-decoration: none;
+  text-align: center;
+  line-height: 3rem;
+}
+
+.oscuro{
+  background-color: var(--bg-800);
+  color: var(--bg-100);
+  border: none;
+}
+
+.oscuro:hover {
+  background-color: var(--bg-600);
+}
+
+.claro {
+  background-color: var(--bg-100);
+  border: 1px solid var(--bg-800);
+}
+
+.claro:hover {
+  background-color: var(--bg-300);
+}

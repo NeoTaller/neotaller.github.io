@@ -1,0 +1,172 @@
+.checkout{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkout-container{
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(78px, 1fr));
+  column-gap: 24px;
+}
+
+.checkput-steps{
+  grid-column: 1/13;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0 56px 0;
+}
+
+.step{
+  width: 80px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.step p{
+  margin: 0;
+}
+.step-circle{
+  width: 80px;
+  height: 80px;
+  background-color: var(--bg-300);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sc-inactive{
+  opacity: 0.5;
+}
+
+.union{
+  display: block;
+  height: 2px;
+  width: 132px;
+  background-color: black;
+  margin: 0 4px;
+}
+
+.checkout-form{
+  grid-column: 1/8;
+  padding-bottom: 500px;
+}
+
+.checkout-form input[type='text'], .checkout-form input[type='email'] {
+  height: 48px;
+  width: 100%;
+}
+
+.cf-flexColStart {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 22px;
+}
+
+.cf-dir1{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 22px;
+}
+
+.cf-dir2{
+  margin-bottom: 22px;
+}
+
+.cf-flexColStart input{
+  width: 100%;
+}
+
+.cf-col2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cf-col4{
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+.cf-col8{
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
+.cf-col8 label{
+  margin-left: 16px;
+}
+
+.cf-col1 {
+  margin-bottom: 16px;
+}
+
+.cf-col9 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cf-col9 a{
+  text-decoration: none;
+}
+.cf-col9 button{
+  border: none;
+  width: 384px;
+  height: 48px;
+  color: var(--bg-100);
+  background-color: var(--bg-800);
+}
+
+.checkout-summary{
+  grid-column: 8/13;
+  background-color: var(--bg-400);
+  height: fit-content;
+  padding: 28px 53px;
+}
+
+.checkout-summary h3{
+  margin-bottom: 28px;
+}
+
+.checkout-subtotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary-cobro{
+  margin-top: 68px;
+}
+.summary-cobro p{
+  margin: 0;
+}
+
+.total{
+  margin: 28px 0;
+}
+
+.checkout-logos{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.cajita{
+  display: block;
+  width: 104px;
+  height: 65px;
+  background-color: var(--bg-700);
+  border-radius: 5px;
+}

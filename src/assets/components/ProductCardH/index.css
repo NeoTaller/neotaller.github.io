@@ -1,0 +1,81 @@
+.product-card-h {
+  border: 1px solid black;
+  width: 690px;
+  max-width: 690px;
+  height: 220px;
+  display: flex;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.card-h-fig{
+  width: 224px;
+  min-width: 224px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid black;
+  background-color: var(--bg-300);
+}
+
+.card-h-fig img{
+  width: 160px;
+}
+
+.card-h-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px 16px;
+  width: 100%;
+}
+
+.card-h-info p {
+  margin: 4px 0;
+  padding: 0;
+}
+
+.card-h-info--ap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 36px;
+}
+
+.eliminar {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+
+.card-h-info--artista {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.card-h-info--artista figure {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-left: 16px;
+  background-color: var(--bg-300);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-h-info--artista img {
+  width: 24px;
+}
+
+.card-h-precio{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

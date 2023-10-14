@@ -1,0 +1,129 @@
+.da-info{
+  display: grid;
+  grid-template-columns: repeat(12, minmax(78px, 1fr));
+  height: 648px;
+  margin-bottom: 100px;
+}
+
+.da-info-datos{
+  grid-column: 1/6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-300);
+  padding: 100px 130px;
+}
+
+.datos-img-bg{
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: var(--bg-200);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.datos-img-bg img {
+  width: 100px;
+}
+
+.da-info-nombres{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px ;
+}
+
+.da-info-rrss{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rrss-logos{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+
+.rrss-logos img{
+  cursor: pointer;
+  width: 52px;
+}
+
+.da-info-galeria{
+  grid-column: 6/13;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.galeria-imgs{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 24px;
+  width: 100%;
+}
+
+.ball-selector{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 343px;
+  max-width: 343px;
+}
+
+.pelotita{
+  width: 24px;
+  height: 24px;
+  display: block;
+  border-radius: 50%;
+  background-color: var(--bg-500);
+}
+
+.p-activa {
+  background-color: var(--bg-800);
+}
+
+.da-destacadas{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 102px;
+}
+
+.destacadas-container{
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 24px;
+}
+
+
+
+.da-coleccion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 440px;
+  margin-bottom: 200px;
+  background-image: url('../../img/defaultImg.png');
+  background-position: center;
+  background-size: cover;
+}
+
+.da-coleccion h4{
+  text-align: center;
+}

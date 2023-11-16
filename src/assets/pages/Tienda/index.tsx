@@ -1,9 +1,24 @@
+import { useEffect, useState } from "react";
 import { SideBar } from "../../components/SideBar"
 import { ProductCard } from "../../components/ProductCard";
 import defaultImg from '../../img/defaultImg.png';
 import './index.css'
+import { getProductos } from "../../../services/productos";
+import { GetProducts } from '../../../interfaces/Products';
 
 const Tienda = () => {
+
+  const [products, setProducts] = useState<GetProducts[]>([])
+
+  useEffect(() => {
+    const getProducts = async() => {
+      const data  = await getProductos()
+      if(!data) return;
+      setProducts(data)
+    }
+    getProducts()
+  }, []);
+  
 
   return(
     <>
@@ -49,19 +64,18 @@ const Tienda = () => {
             </div>
           </div>
           <section className="card-container">
-            <ProductCard rutaImg={defaultImg} title={'Nombre Prenda'} description={'Descripción de prenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='999.999'></ProductCard>
-            <ProductCard rutaImg={defaultImg} title={'Nombre Prenda'} description={'Descripción de prenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='999.999'></ProductCard>
-            <ProductCard rutaImg={defaultImg} title={'Nombre Prenda'} description={'Descripción de prenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='999.999'></ProductCard>
-            <ProductCard rutaImg={defaultImg} title={'Nombre Prenda'} description={'Descripción de prenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='999.999'></ProductCard>
-            <ProductCard rutaImg={defaultImg} title={'Nombre Prenda'} description={'Descripción de prenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='999.999'></ProductCard>
-            <ProductCard rutaImg={defaultImg} title={'Nombre Prenda'} description={'Descripción de prenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='999.999'></ProductCard>
-            <ProductCard rutaImg={defaultImg} title={'Nombre Prenda'} description={'Descripción de prenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='999.999'></ProductCard>
-            <ProductCard rutaImg={defaultImg} title={'Nombre Prenda'} description={'Descripción de prenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='999.999'></ProductCard>
-            <ProductCard rutaImg={defaultImg} title={'Nombre Prenda'} description={'Descripción de prenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='999.999'></ProductCard>
-            <ProductCard rutaImg={defaultImg} title={'Nombre Prenda'} description={'Descripción de prenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='999.999'></ProductCard>
-            <ProductCard rutaImg={defaultImg} title={'Nombre Prenda'} description={'Descripción de prenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='999.999'></ProductCard>
-            <ProductCard rutaImg={defaultImg} title={'Nombre Prenda'} description={'Descripción de prenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='999.999'></ProductCard>
-          </section>
+            {
+              products.map(({id, nombre, descripcion, precio}) => 
+                <ProductCard 
+                  key={id}
+                  rutaImg={defaultImg} 
+                  title={nombre} 
+                  description={descripcion} 
+                  price={precio}
+                />
+              ) 
+            }
+          </section> 
         </section>
       </main>
     </>

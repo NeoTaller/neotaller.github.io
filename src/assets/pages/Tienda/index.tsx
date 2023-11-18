@@ -59,8 +59,8 @@ const Tienda = () => {
             <div className="categoriaRound">
               <div className="img-container">
                   <img src={defaultImg} alt="" />
-                </div>
-                <p>Zapatillas</p>
+              </div>
+              <p>Zapatillas</p>
             </div>
           </div>
           <section className="card-container">
@@ -68,6 +68,7 @@ const Tienda = () => {
               products.map(({id, nombre, descripcion, precio}) => 
                 <ProductCard 
                   key={id}
+                  id={id}
                   rutaImg={defaultImg} 
                   title={nombre} 
                   description={descripcion} 

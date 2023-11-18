@@ -2,19 +2,20 @@ import { Link } from 'react-router-dom';
 import './index.css';
 
 interface Props {
+  id : number;
   rutaImg: string;
   title: string;
   description: string;
   price: string | number;
 }
 
-export function ProductCard ({ title, description, rutaImg, price } : Props) {
+export function ProductCard ({ id, title, description, rutaImg, price } : Props) {
 
   return(
     <div className="card-products">
       <div className="card-top">
         <h3 className='card-title'>
-          <Link className='card-title--link' to={'/detalle'}>{title}</Link>
+          <Link className='card-title--link' to={`/detalle/${id}`}>{title}</Link>
         </h3>
         <span className='like'>❤️</span>
       </div>

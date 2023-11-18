@@ -1,7 +1,31 @@
+import axios from 'axios';
 import defaultImg from '../../img/defaultImg.png';
 import './index.css'
+import { useEffect, useState } from 'react';
+import { GetProductDetail } from '../../../interfaces/Products';
 
-const ProductoDetailInfo = () => {
+const ProductoDetailInfo = ( {productId} : {productId:string} ) => {
+
+  const [product, setProduct] = useState<GetProductDetail>({
+    id : 0,
+    idMarca : 0,
+    nombre : '',
+    descripcion : '',
+    precio : 0,
+    inventario : [],
+  })
+  console.log( productId );
+
+  useEffect(() => {
+    const getProductDetail = async() => {
+      const data  = await axios.get(`http://localhost:3000/productos/${productId}`)
+      if(!data) return;
+      console.log(data);
+      setProduct(data.data)
+    }
+    getProductDetail()
+  }, []);
+
   return (
     <section className='pd-container'>
       <section className='pd-container-imgs'>
@@ -16,10 +40,11 @@ const ProductoDetailInfo = () => {
       </section>
       <section className='pd-container-info'>
         <span className='container-info-like'>❤️</span>
-        <h2>Nombre del Producto</h2>
+        <h2>{product.nombre}</h2>
+        <h3>{product.descripcion}</h3>
         <p className='info-talla'>Talla</p>
         <div className="precio-container">
-          <p className='info-precio'>$10.000</p>
+          <p className='info-precio'>{`$ ${product.precio}`}</p>
           <div className="precio-sel-curr">
             <p className="precio-clp">CLP</p>
             <p className="precio-usd">USD</p>

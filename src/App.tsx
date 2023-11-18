@@ -26,7 +26,9 @@ function App() {
         <Route path='/detalle-artista' element={<DetalleArtista />}/>
         <Route path='/contacto' element={<Contacto />}/>
         <Route path='/nosotros' element={<Nosotros />}/>
-        <Route path='/detalle' element={<Detalle />}/>
+        <Route path='/detalle'>
+          <Route path='/detalle/:productId' element={<Detalle />}/>
+        </Route>
         <Route path='/carrito' element={<Carrito />}/>
         <Route path='/checkout' element={<Checkout />}/>
       </Routes>

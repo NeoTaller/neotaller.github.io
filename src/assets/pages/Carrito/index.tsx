@@ -7,6 +7,7 @@ import botecito from '../../icons/Delete.svg'
 
 import './index.css'
 import { Link } from 'react-router-dom'
+import { useAppSelector } from '../../../redux/store'
 
 // interface ProductsInterface{
 //   rutaImg: string;
@@ -15,27 +16,32 @@ import { Link } from 'react-router-dom'
 //   price: string;
 // }
 
-const productosCarrito = [{
-  rutaImg: defaultImg,
-  title: 'Producto 1',
-  description: 'Lorem ipsum dolor sit amet consectetur.',
-  price: '$10000',
-},
-{
-  rutaImg: defaultImg,
-  title: 'Producto 2',
-  description: 'Lorem ipsum dolor sit amet consectetur.',
-  price: '$20000',
-},
-{
-  rutaImg: defaultImg,
-  title: 'Producto 3',
-  description: 'Lorem ipsum dolor sit amet consectetur.',
-  price: '$30000',
-}
-]
+// const productosCarrito = [{
+//   rutaImg: defaultImg,
+//   title: 'Producto 1',
+//   description: 'Lorem ipsum dolor sit amet consectetur.',
+//   price: '$10000',
+// },
+// {
+//   rutaImg: defaultImg,
+//   title: 'Producto 2',
+//   description: 'Lorem ipsum dolor sit amet consectetur.',
+//   price: '$20000',
+// },
+// {
+//   rutaImg: defaultImg,
+//   title: 'Producto 3',
+//   description: 'Lorem ipsum dolor sit amet consectetur.',
+//   price: '$30000',
+// }
+// ]
+
 
 const Carrito = () => {
+  
+  const productosCarrito = useAppSelector((state) => state.shoppingCart.productList)
+  const total = useAppSelector((state) => state.shoppingCart.total)
+
   return (
     <main className="carrito">
       <section className='carrito-content'>
@@ -44,10 +50,12 @@ const Carrito = () => {
           {
             productosCarrito.map((producto) => (
               <ProductCardH 
-              rutaImg={producto.rutaImg}
-              title={producto.title}
-              description={producto.description}
-              price={producto.price}
+              key={producto.id}
+              id={producto.id}
+              rutaImg={producto.img}
+              title={producto.nombre}
+              description={`Talla ${producto.talla}`}
+              price={producto.precio}
               />
             ))
           }
@@ -64,7 +72,7 @@ const Carrito = () => {
           </div>
           <div className="subtotal">
             <h4 className='headline3'>Sub Total</h4>
-            <h4 className='headline3'>$$$$$</h4>
+            <h4 className='headline3'>{`$ ${total}`}</h4>
           </div>
           <span className="divider"></span>
 

@@ -5,6 +5,7 @@ header{
   align-items: center;
   justify-content: space-between;
   background-color: var(--bg-500);
+  position: relative;
 }
 
 .logo{

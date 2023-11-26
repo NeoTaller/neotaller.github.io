@@ -1,17 +1,19 @@
-import { Link } from 'react-router-dom';
-import './index.css';
 import { useAppDispatch } from '../../../redux/store';
 import { CartProduct, addProductToCart } from '../../../redux/features/shoppingCartSlice';
+import likeButton from '../../../assets/icons/like button.svg';
+import cartIcon from '../../icons/shopping-cart w.svg'
+import './index.css';
+import { Link } from 'react-router-dom';
 
 interface Props {
   id : number;
   rutaImg: string;
   title: string;
-  description: string;
+  talla: string;
   price: string;
 }
 
-export function ProductCard ({ id, title, description, rutaImg, price } : Props) {
+export function ProductCard ({ id, title, talla, rutaImg, price } : Props) {
 
   const dispatch = useAppDispatch()
 
@@ -27,21 +29,24 @@ export function ProductCard ({ id, title, description, rutaImg, price } : Props)
   }
 
   return(
-    <div className="card-products">
-      <div className="card-top">
-        <h3 className='card-title'>
-          <Link className='card-title--link' to={`/detalle/${id}`}>{title}</Link>
-        </h3>
-        <span className='like'>❤️</span>
-      </div>
-      <div className="card-middle">
-        <img className='card-img' src={rutaImg} alt="" />
-        <button onClick={handleClick} className='addToCart'>Añadir al Carrito</button>
-      </div>
-      <div className="card-bottom">
-        <p className="price">{'$ '+ price}</p>
-        <p className='desc'>{description}</p>
-      </div>
+    <div className="card-products" >
+      <Link className='card' to={`/detalle/${id}`}>
+        <figure>
+          <img className="card-img" src={rutaImg} alt="" />
+        </figure>
+        <div className="card-middle">
+            <h3 className="headline3 h-medium card-title--link">{title}</h3>
+            <img className="like" src={likeButton} alt="Like" />
+        </div>
+        <div className="card-bottom">
+          <p className="text2 t-regular">{`Talla ${talla}`}</p>
+          <p className="text2 t-bold">{`$ ${price}`}</p>
+        </div>
+      </Link>
+        <button className='addToCartBtn' onClick={handleClick}>
+          <p className='headline3 h-semibold'>Añadir</p>
+          <img src={cartIcon} alt="Añadir al carrito" />
+        </button>
     </div>
   )
 }

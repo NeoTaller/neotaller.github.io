@@ -5,13 +5,13 @@ interface CategoryInfo {
   name: string;
 }
 
-export function CategoryCard(categoria: CategoryInfo) {
+export function CategoryCardSm(categoria: CategoryInfo) {
   return (
-    <div className="card-categoria">
+    <div className="card-categoriaSm">
       <figure>
         <img src={categoria.rutaImg} alt="" />
       </figure>
-      <span className='headline3 h-medium'>{categoria.name}</span>
+      <span className='headline4 h-medium'>{categoria.name}</span>
     </div>
   )
 }

@@ -1,23 +1,17 @@
 header{
   height: 80px;
-  padding: 0 46px;
+  padding: 4px 16px 4px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--bg-500);
+  background-color: var(--purple-300);
+  color: var(--white);
   position: relative;
 }
 
-.logo{
-  font-size: 40px;
-  font-weight: 600;
-  width: 10%;
-  text-align: center;
-  text-decoration: none;
-  color: var(--bg-50);
-}
-nav{
-  width: 60%;
+.header-logo img{
+  width: 200px;
+  height: 23px;
 }
 
 nav ul{
@@ -25,24 +19,21 @@ nav ul{
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  gap: 24px;
 }
 
 nav ul li{
-  padding: 0 16px;
-  font-weight: 500;
+  padding: 8px 16px;
 }
 
 nav ul li a{
   text-decoration: none;
-  color: var(--bg-200);
+  color: var(--white);
 }
 
 nav ul li a.active{
-  color: var(--bg-900);
-}
-
-.header-right{
-  width: 30%;
+  color: var(--green-200);
+  border-bottom: 4px solid var(--green-200);
 }
 
 .header-right ul{
@@ -50,23 +41,20 @@ nav ul li a.active{
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 4px;
 }
 
 .header-right ul li{
-  height: 36px;
-  min-height: 36px;
-  width: 36px;
-  min-width: 36px;
-  margin: 0 16px;
+  height: 48px;
+  width: 64px;
+  padding: 8px 16px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--bg-200);
-  border-radius: 50%;
-  line-height: 0.7rem;
+  cursor: pointer;
 }
 
 .icon{
-  width: 22px;
-  height: 22px;
+  width: 32px;
+  height: 32px;
 }

@@ -1,6 +1,6 @@
 import { deleteProductFromCart } from '../../../redux/features/shoppingCartSlice';
 import { useAppDispatch } from '../../../redux/store';
-import trashCan from '../../icons/Delete.svg'
+import trashCan from '../../icons/trash-2.svg'
 import defaultImg from '../../img/defaultImg.png'
 import './index.css';
 

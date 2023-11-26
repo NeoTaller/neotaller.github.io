@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom'
 import './index.css'
 import { Faq } from '../../components/Faq'
 import defaultImg from '../../img/defaultImg.png'
-import mailIco from '../../icons/mail-send-envelope.svg'
-import whatsIco from '../../icons/whatsapp.svg'
-import igIco from '../../icons/instagram-original.svg'
-import fbIco from '../../icons/facebook.svg'
-import clockIco from '../../icons/circle-clock.svg'
+import mailIco from '../../icons/email.svg'
+import whatsIco from '../../icons/Whatsapp.svg'
+import igIco from '../../icons/Instagram.svg'
+import fbIco from '../../icons/Facebook.svg'
+import clockIco from '../../icons/clock.svg'
 
 const Contacto = () => {
 

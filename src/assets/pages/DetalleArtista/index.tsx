@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { ProductCard } from '../../components/ProductCard';
 import defaultImg from '../../img/defaultImg.png';
-import instagram from '../../icons/instagram-original.svg'
-import facebook from '../../icons/facebook.svg'
+import instagram from '../../icons/Instagram.svg'
+import facebook from '../../icons/Facebook.svg'
 import './index.css'
 
 const destacadosArtista = [{

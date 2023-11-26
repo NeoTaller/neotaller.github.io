@@ -1,25 +1,25 @@
-.card-categoria{
+.card-categoriaSm{
   background-color: var(--white);
-  height: 343px;
-  width: 280px;
+  height: 186px;
+  width: 114px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
   border-radius: 8px;
   border: 2px solid var(--black);
-  padding: 16px 16px 24px 16px;
+  padding: 8px 8px 16px 8px;
   cursor: pointer;
 }
 
-.card-categoria:hover{
+.card-categoriaSm:hover{
   box-shadow: 4px 4px 0px 0px var(--black);
 }
 
-.card-categoria figure{
-  width: 248px;
-  height: 248px;
+.card-categoriaSm figure{
+  width: 128px;
+  height: 128px;
   border-radius: 4px;
   border: 2px solid var(--black);
   display: flex;
@@ -27,11 +27,11 @@
   align-items: center;
 }
 
-.card-categoria figure img{
+.card-categoriaSm figure img{
   width: 70%;
 }
 
-.card-categoria span{
+.card-categoriaSm span{
   display: block;
   width: 100%;
   text-align: center;

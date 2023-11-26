@@ -1,9 +1,9 @@
 import { ArtistCard } from '../../components/ArtistCard'
 import { ProductCardH } from '../../components/ProductCardH'
 import defaultImg from '../../img/defaultImg.png'
-import manito from '../../icons/Shopicons_Regular_Eco2.svg'
-import hojita from '../../icons/Shopicons_Regular_Eco1.svg'
-import botecito from '../../icons/Delete.svg'
+import manito from '../../icons/save_water.svg'
+import hojita from '../../icons/Leaf.svg'
+import botecito from '../../icons/trash-2.svg'
 
 import './index.css'
 import { Link } from 'react-router-dom'

@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { deleteProductFromCart } from "../../../redux/features/shoppingCartSlice";
-import { useAppDispatch, useAppSelector } from "../../../redux/store";
+import { useAppSelector } from "../../../redux/store";
 import { ProductCardHSm } from "../ProductCardHSm";
 
 interface ShoppingCartModalProps {
@@ -13,7 +12,6 @@ const ShoppingCartModal = (props : ShoppingCartModalProps) => {
 
   const shoppingCartProducts = useAppSelector((state) => state.shoppingCart.productList)
   const total = useAppSelector((state) => state.shoppingCart.total)
-  const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
   return (
@@ -41,8 +39,7 @@ const ShoppingCartModal = (props : ShoppingCartModalProps) => {
               shoppingCartProducts.map(({id, talla, nombre, img, precio}) =>{
                 return (
                   <div key={id}>
-                    <ProductCardHSm  rutaImg={img} title={nombre} price={precio} description={`Talla ${talla}`}  />
-                    <span onClick={() => dispatch(deleteProductFromCart(id)) }>{"(basurita)"}</span>
+                    <ProductCardHSm  rutaImg={img} title={nombre} price={precio} description={`Talla ${talla}`} id={id}  />
                   </div>
                 )
             })

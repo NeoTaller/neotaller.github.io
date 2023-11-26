@@ -36,22 +36,22 @@ const Home = () => {
       <section className='novedades'>
         <h2>Recién llegados</h2>
         <div className='novedades-cardContainer'>
-          <ProductCard rutaImg={defaultImg} title={'Nombre Prenda'} description={'Descripción de prenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='999.999'></ProductCard>
-          <ProductCard rutaImg={defaultImg} title={'Nombre Prenda'} description={'Descripción de prenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='999.999'></ProductCard>
-          <ProductCard rutaImg={defaultImg} title={'Nombre Prenda'} description={'Descripción de prenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='999.999'></ProductCard>
-          <ProductCard rutaImg={defaultImg} title={'Nombre Prenda'} description={'Descripción de prenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='999.999'></ProductCard>
-          <ProductCard rutaImg={defaultImg} title={'Nombre Prenda'} description={'Descripción de prenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='999.999'></ProductCard>
+          <ProductCard id={1} rutaImg={defaultImg} title={'Prenda 1'} description={'Descripción de prenda 1. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='10990'></ProductCard>
+          <ProductCard id={2} rutaImg={defaultImg} title={'Prenda 2'} description={'Descripción de prenda 2. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='20000'></ProductCard>
+          <ProductCard id={3} rutaImg={defaultImg} title={'Prenda 3'} description={'Descripción de prenda 3. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='45000'></ProductCard>
+          <ProductCard id={4} rutaImg={defaultImg} title={'Prenda 4'} description={'Descripción de prenda 4. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='10000'></ProductCard>
+          <ProductCard id={5} rutaImg={defaultImg} title={'Prenda 5'} description={'Descripción de prenda 5. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='37990'></ProductCard>
         </div>
       </section>
       {/* ===================== OFERTAS ==========================================*/}
       <section className='ofertas'>
         <h2>Ofertas del mes</h2>
         <div className='novedades-cardContainer'>
-          <ProductCard rutaImg={defaultImg} title={'Nombre Prenda'} description={'Descripción de prenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='999.999'></ProductCard>
-          <ProductCard rutaImg={defaultImg} title={'Nombre Prenda'} description={'Descripción de prenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='999.999'></ProductCard>
-          <ProductCard rutaImg={defaultImg} title={'Nombre Prenda'} description={'Descripción de prenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='999.999'></ProductCard>
-          <ProductCard rutaImg={defaultImg} title={'Nombre Prenda'} description={'Descripción de prenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='999.999'></ProductCard>
-          <ProductCard rutaImg={defaultImg} title={'Nombre Prenda'} description={'Descripción de prenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='999.999'></ProductCard>
+          <ProductCard id={6} rutaImg={defaultImg} title={'Prenda 6'} description={'Descripción de prenda 6. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='15990'></ProductCard>
+          <ProductCard id={7} rutaImg={defaultImg} title={'Prenda 7'} description={'Descripción de prenda 7. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='48990'></ProductCard>
+          <ProductCard id={8} rutaImg={defaultImg} title={'Prenda 8'} description={'Descripción de prenda 8. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='24990'></ProductCard>
+          <ProductCard id={9} rutaImg={defaultImg} title={'Prenda 9'} description={'Descripción de prenda 9. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='16990'></ProductCard>
+          <ProductCard id={10} rutaImg={defaultImg} title={'Prenda 10'} description={'Descripción de prenda 10. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='8990'></ProductCard>
         </div>
       </section>
       {/* ============== ARTISTAS ==================== */}

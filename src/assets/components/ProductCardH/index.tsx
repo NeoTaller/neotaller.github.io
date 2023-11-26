@@ -1,8 +1,11 @@
+import { deleteProductFromCart } from '../../../redux/features/shoppingCartSlice';
+import { useAppDispatch } from '../../../redux/store';
 import trashCan from '../../icons/Delete.svg'
 import defaultImg from '../../img/defaultImg.png'
 import './index.css';
 
 interface ProductsInterface{
+  id: number;
   rutaImg: string;
   title: string;
   description: string;
@@ -10,14 +13,15 @@ interface ProductsInterface{
 }
 
 export function ProductCardH (producto: ProductsInterface) {
-
+  const dispatch = useAppDispatch()
+  
   return(
     <div className='product-card-h'>
       <figure className='card-h-fig'>
         <img src={defaultImg} alt="producto" />
       </figure>
       <div className='card-h-info'>
-        <img className='eliminar' src={trashCan} alt="eliminar" />
+        <img className='eliminar' src={trashCan} alt="eliminar" onClick={() => dispatch(deleteProductFromCart(producto.id))} />
         <h4 className='headline2'>{producto.title}</h4>
         <p className='text1'>Talla M</p>
         <p className='text4'>{producto.description}</p>

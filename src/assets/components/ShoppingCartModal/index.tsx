@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../../redux/store";
 import { ProductCardHSm } from "../ProductCardHSm";
+import './index.css'
 
 interface ShoppingCartModalProps {
   isVisible: boolean;
@@ -29,7 +30,7 @@ const ShoppingCartModal = (props : ShoppingCartModalProps) => {
       }
       >
         <div className="title">
-          <h3>Tu Carrito</h3>
+          <h3 className="headline2 h-bold">Tu Carrito</h3>
           <span onClick={() => props.setIsVisible(false)}>X</span>
         </div>
         <div className="container">
@@ -46,15 +47,15 @@ const ShoppingCartModal = (props : ShoppingCartModalProps) => {
           }
         </div>
         <div className="totalprice">
-          <p>Total</p>
-          <p>{`$ ${total}`}</p>
+          <p className="headline4 h-regular">Total</p>
+          <p className="headline4 h-medium">{`$ ${total}`}</p>
         </div>
-        <div className="checkout">
-          <button onClick={() => {
+        <div className="checkout-cart-modal">
+          <button className="headline3 h-semibold cart-modal-carrito" onClick={() => {
             props.setIsVisible(false)
             navigate('/carrito')
             }}>Ir al carrito</button>
-          <button onClick={() => {
+          <button className="headline3 h-semibold cart-modal-tienda" onClick={() => {
             props.setIsVisible(false)
             navigate('/tienda')
             }}>Seguir comprando</button>

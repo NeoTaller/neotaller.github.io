@@ -1,10 +1,27 @@
 .carrito{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0;
   margin: 0;
 }
+
+.carrito p{
+  margin: 0;
+  padding: 0;
+}
+
+.carrito-content-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--green-200);
+  color: var(--black);
+  height: 152px;
+  width: 100%;
+}
+
 .carrito-content{
   margin: 100px 120px ;
   max-width: 1200px;
@@ -13,9 +30,6 @@
   gap: 24px;
 }
 
-.carrito-content-title{
- grid-column: 1/13;
-}
 .carrito-content--products{
   grid-column: 1/8;
 }
@@ -24,6 +38,10 @@
   grid-column: 8/13;
   background-color: var(--bg-400);
   padding: 23px 35px;
+}
+
+.carrito-content--summary h4{
+  margin-bottom: 24px;
 }
 
 .divider{
@@ -38,6 +56,7 @@
   height: 48px;
   width: 100%;
   padding-left: 16px;
+  margin: 8px 0;
 }
 
 .despacho-precio{
@@ -53,11 +72,19 @@
   justify-content: space-between;
 }
 
+.summary-cards-container {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 32px;
+  margin-top: 24px;
+}
+
 .summary-benefits{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 48px;
 }
 
 .aportes{
@@ -82,42 +109,44 @@
 
 .aportes figure p{
   text-align: center;
+  margin: 12px 0;
 }
 
-.summary-cards-container {
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 24px 0;
-  margin-bottom: 48px;
-}
 
 .boton {
   display: block;
-  height: 48px;
+  height: 64px;
   width: 100%;
   margin: 16px 0;
-  text-decoration: none;
-  text-align: center;
-  line-height: 3rem;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.oscuro{
-  background-color: var(--bg-800);
-  color: var(--bg-100);
+.boton:hover{
+  cursor: pointer;
+  box-shadow: 4px 4px 0px 0px var(--black);
+}
+
+.boton:active{
+  cursor: pointer;
+  box-shadow: 4px 4px 0px 0px var(--black) inset;
+}
+
+.boton a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.primario{
+  background-color: var(--pink-200);
+  color: var(--white);
   border: none;
 }
 
-.oscuro:hover {
-  background-color: var(--bg-600);
-}
-
-.claro {
-  background-color: var(--bg-100);
-  border: 1px solid var(--bg-800);
-}
-
-.claro:hover {
-  background-color: var(--bg-300);
+.secundario {
+  background-color: var(--white);
+  border: 2px solid var(--black);
+  color: var(--black);
 }

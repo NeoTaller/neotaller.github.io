@@ -11,45 +11,62 @@
 }
 
 .artistas-title{
+  padding-top: 48px ;
   margin-bottom: 142px;
-  height: 120px;
-  background-color: var(--bg-200);
+  height: 152px;
+  background-color: var(--green-200);
   display: block;
   text-align: center;
-  line-height: 6.5rem;
 }
 
 .artistas-contact-container{
-  height: 440px;
+  height: 320px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('../../img/defaultImg.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   margin-bottom: 120px;
+  background-color: var(--green-200);
+  padding: 42px 0;
 }
 
 .artistas-contact-container h4{
-  width: 864px;
+  width: 1200px;
   text-align: center;
   margin-bottom: 76px;
 }
 
 .artistas-contact-button{
-  background-color: var(--color2);
+  background-color: var(--pink-200);
   display: block;
-  height: 80px;
-  width: 400px;
-  color: var(--color4);
+  height: 64px;
+  width: 480px;
+  color: var(--white);
   text-decoration: none;
   text-align: center;
-  line-height: 4.5rem;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
 .artistas-contact-button:hover {
-  background-color: #BF0245 ;
+  box-shadow: 4px 4px 0px 0px var(--black);
+}
+
+.artistas-contact-button:active {
+  box-shadow: 4px 4px 0px 0px var(--black) inset;
+}
+
+.center{
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.h3center{
+  text-align: center;
+  width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 40px;
 }

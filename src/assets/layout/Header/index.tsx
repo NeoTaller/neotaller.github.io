@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
-import { ShoppingCartModal } from '../../components/ShoppingCartModal/ShoppingCartModal'
+import { ShoppingCartModal } from '../../components/ShoppingCartModal'
 import searchIcon from '../../icons/search w.svg'
 import userIcon from '../../icons/Log in w.svg'
 import cartIcon from '../../icons/shopping-cart w.svg'

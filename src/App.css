@@ -86,6 +86,12 @@
   line-height: 30px;
 }
 
+.text4 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  line-height: auto;
+}
+
 /* WEIGHT */
 
 .h-regular{

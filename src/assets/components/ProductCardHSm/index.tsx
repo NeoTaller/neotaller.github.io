@@ -22,16 +22,15 @@ export function ProductCardHSm (producto: ProductsInterface) {
         <img src={defaultImg} alt="producto" />
       </figure>
       <div className='card-h-sm-info'>
-        <h4 className='text5'>{producto.title}</h4>
-        <p className='text6'>Talla M</p>
-        <div className='card-h-sm-precio'>
-            <p className='text5'>Precio</p>
-            <p className='text6'>{producto.price}</p>
+        <h4 className='headline4 h-medium'>{producto.title}</h4>
+        <div className='card-h-sm-detalle'>
+          <p className='text4 t-regular no-margin'>Talla M</p>
+          <p className='text4 t-bold no-margin'>{`S ${producto.price}`}</p>
         </div>
-        <span className='card-h-sm-delete' onClick={() => dispatch(deleteProductFromCart(producto.id)) }>
-          <img src={deleteIcon} alt="Eliminar del carrito" />
-        </span>
       </div>
+      <span className='card-h-sm-delete' onClick={() => dispatch(deleteProductFromCart(producto.id)) }>
+        <img src={deleteIcon} alt="Eliminar del carrito" />
+      </span>
     </div>
   )
 }

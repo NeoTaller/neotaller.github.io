@@ -1,0 +1,14 @@
+.category-picker{
+  width: 1200px;
+  height: 166px;
+  margin: 0 auto 72px auto;
+  border-bottom: 2px solid var(--black);
+  border-top: 2px solid var(--black);
+}
+
+.category-picker .categories{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

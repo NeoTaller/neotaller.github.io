@@ -1,0 +1,19 @@
+.page-title{
+  height: 211px;
+  margin-bottom: 32px;
+}
+
+.page-title section{
+  height: 152px;
+  width: 100%;
+  background-color: var(--green-200);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.page-title p{
+  width: 1200px;
+  margin: 0 auto;
+}

@@ -1,0 +1,35 @@
+.category-avatar{
+  width: 88px;
+  height: 118px;
+}
+
+.category-avatar-frame{
+  width: 88px;
+  height: 88px;
+  background: var(--white);
+  border-radius: 8px;
+  border: 2px solid var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-avatar-figure{
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 2px solid var(--black);
+}
+.category-avatar-figure img{
+  width: 90%;
+}
+
+.category-avatar-nombre{
+  margin-top: 12px;
+  text-align: center;
+  font-family: 'Kufam', sans-serif;
+  font-size: 14px;
+}

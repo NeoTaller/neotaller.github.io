@@ -1,89 +1,119 @@
 :root{
-  /* Colores wireframe baja */
-  --bg-50:  #f8fafc;
-  --bg-100: #f1f5f9;
-  --bg-200: #e2e8f0;
-  --bg-300: #cbd5e1;
-  --bg-400: #94a3b8;
-  --bg-500: #64748b;
-  --bg-600: #475569;
-  --bg-700: #334155;
-  --bg-800: #1e293b;
-  --bg-900: #0f172a;
-  --bg-950: #020617;
-  /* Colores UIKit */
-  --color1: #682196;
-  --color2: #f53e7f;
-  --color3: #C6E957;
-  --color4: #FFFFFF;
-  --color5: #000000;
+  /* Purple */
+  --purple-100: #fedcff;
+  --purple-200: #c17dee;
+  --purple-300: #6704a9;
+  --purple-400: #31094c;
+  /* Pink */
+  --pink-100:  #f9b4cd;
+  --pink-200:  #f53e7f;
+  --pink-300:  #cb245f;
+  --pink-400:  #bf0245;
+  --pink-500:  #a41849;
+  --pink-600:  #5b0524;
+  /* Green */
+  --green-100: #e1f0b2;
+  --green-200: #c6e957;
+  --green-300: #6e8f04;
+  --green-400: #577103;
+  --green-500: #2f3d04;
+  /* Grey */
+  --white: #ffffff;
+  --gray-200: #cecece;
+  --gray-300: #a9a9a9;
+  --gray-400: #6f6f6f;
+  --gray-500: #404040;
+  --gray-600: #1e1e1e;
+  --black: #000000;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'PT Sans', sans-serif;
-  color: var(--bg-900);
+  font-family: 'Raleway', sans-serif;
 }
 
+
 /* == Tipografías del UIKit == */
+/* KUFAM */
+.display{
+  font-family: 'Kufam', sans-serif;
+  font-size: 64px;
+  line-height: 72px;
+}
+
 .headline1{
-  font-family: 'Oswald', sans-serif;
-  font-weight: 600;
+  font-family: 'Kufam', sans-serif;
   font-size: 48px;
+  line-height: 56px;
 }
 
 .headline2{
-  font-family: 'Oswald', sans-serif;
-  font-weight: 500;
+  font-family: 'Kufam', sans-serif;
   font-size: 32px;
+  line-height: 40px;
 }
 
 .headline3{
-  font-family: 'Oswald', sans-serif;
-  font-weight: 500;
+  font-family: 'Kufam', sans-serif;
   font-size: 24px;
+  line-height: 40px;
 }
 
 .headline4 {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 500;
+  font-family: 'Kufam', sans-serif;
   font-size: 20px;
+  line-height: 32px;
 }
 
+/* RALEWAY */
 .text1 {
-  font-family: 'PT Sans', sans-serif;
-  font-weight: 700;
+  font-family: 'Raleway', sans-serif;
   font-size: 20px;
+  line-height: 32px;
 }
 
 .text2 {
-  font-family: 'PT Sans', sans-serif;
-  font-weight: 400;
+  font-family: 'Raleway', sans-serif;
   font-size: 20px;
+  line-height: 30px;
 }
 
 .text3 {
-  font-family: 'PT Sans', sans-serif;
-  font-weight: 700;
+  font-family: 'Raleway', sans-serif;
   font-size: 16px;
+  line-height: 30px;
 }
 
 .text4 {
-  font-family: 'PT Sans', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  line-height: auto;
 }
 
-.text5 {
-  font-family: 'PT Sans', sans-serif;
+/* WEIGHT */
+
+.h-regular{
+  font-weight: 400;
+}
+
+.h-medium{
+  font-weight: 500;
+}
+
+.h-semibold{
+  font-weight: 600;
+}
+
+.h-bold{
   font-weight: 700;
-  font-size: 14px;
 }
 
-.text6 {
-  font-family: 'PT Sans', sans-serif;
-  font-weight: 400;
-  font-size: 14px;
+.t-regular{
+  font-weight: 500;
+}
+
+.t-bold{
+  font-weight: 700;
 }

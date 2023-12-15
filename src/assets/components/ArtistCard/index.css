@@ -1,30 +1,31 @@
 .card-artista{
-  width: 135px ;
-  height: 173px;
+  width: 280px ;
+  height: 343px;
+  padding: 16px 16px 24px 16px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 2px solid var(--black);
+}
+
+.card-artista:hover{
+  box-shadow: 4px 4px 0px 0px var(--black);
 }
 
 .card-artista--img{
-  background-color: var(--bg-300);
-  width: 135px;
-  height: 135px;
-  padding: 16px;
+  width: 248px;
+  height: 248px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
-  cursor: pointer;
+  border-radius: 4px;
+  border: 2px solid var(--black);
+  margin-bottom: 24px;
 }
-
-.card-artista--img:hover{
-  background-color: var(--bg-200);
-  scale: 1.05;
-}
-
 
 .card-artista--img img{
-  width: 80%;
+  width: 70%;
 }

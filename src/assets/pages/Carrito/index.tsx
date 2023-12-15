@@ -1,13 +1,14 @@
-import { ArtistCard } from '../../components/ArtistCard'
-import { ProductCardH } from '../../components/ProductCardH'
-import defaultImg from '../../img/defaultImg.png'
-import manito from '../../icons/Shopicons_Regular_Eco2.svg'
-import hojita from '../../icons/Shopicons_Regular_Eco1.svg'
-import botecito from '../../icons/Delete.svg'
-
-import './index.css'
 import { Link } from 'react-router-dom'
 import { useAppSelector } from '../../../redux/store'
+import { ProductCardH } from '../../components/ProductCardH'
+import { ArtistAvatar } from '../../components/ArtistAvatar'
+import defaultImg from '../../img/defaultImg.png'
+import manito from '../../icons/save_water.svg'
+import hojita from '../../icons/Leaf.svg'
+import botecito from '../../icons/trash-2.svg'
+import './index.css'
+
+
 
 // interface ProductsInterface{
 //   rutaImg: string;
@@ -44,8 +45,10 @@ const Carrito = () => {
 
   return (
     <main className="carrito">
+      <div className='carrito-content-title'>
+        <h2 className='headline1 h-semibold'>Carrito de compras</h2>
+      </div>
       <section className='carrito-content'>
-        <h3 className='headline2 carrito-content-title'>Tu Carrito</h3>
         <section className='carrito-content--products'>
           {
             productosCarrito.map((producto) => (
@@ -61,21 +64,25 @@ const Carrito = () => {
           }
         </section>
         <section className='carrito-content--summary'>
-          <h4 className='headline3'>Resumen de compra</h4>
-          <span className='divider'></span>
-          <p className='text3'>¿Tienes un código de descuento? Ingrésalo aquí</p>
+          <h4 className='headline2 h-semibold'>Resumen de compra</h4>
+          <p className='text3 t-bold'>¿Tienes un código de descuento?</p>
           <input className='summary-input'type="text" name='discCode' id='discCode' placeholder='Ingresa tu código' />
           <p className='text4'>Tu código será aplicado en el checkout</p>
           <div className="despacho-precio">
-            <p className='text3'>Despacho</p>
-            <p className='text6'>Envío se calcula en Checkout</p>
+            <p className='text1 t-bold'>Despacho</p>
+            <p className='text2 t-regular'>Envío se calcula en Checkout</p>
           </div>
           <div className="subtotal">
-            <h4 className='headline3'>Sub Total</h4>
-            <h4 className='headline3'>{`$ ${total}`}</h4>
+            <h4 className='headline3 h-medium'>Sub Total</h4>
+            <h4 className='headline3 h-medium'>{`$ ${total}`}</h4>
           </div>
           <span className="divider"></span>
-
+          <h4 className='headline3'>Con tu compra apoyas a:</h4>
+          <div className='summary-cards-container'>
+              <ArtistAvatar name='Artista 1' rutaImg={defaultImg}/>
+              <ArtistAvatar name='Artista 2' rutaImg={defaultImg}/>
+            </div>
+          <span className="divider"></span>
           <div className="summary-benefits">
             <h4 className='headline3'>Con tu compra ayudas a ahorrar:</h4>
             <div className='aportes'>
@@ -92,14 +99,14 @@ const Carrito = () => {
                 <p className='text6'><b>0.3 Kg</b> de desechos</p>
               </figure>
             </div>
-            <h4 className='headline3'>Con tu compra apoyas a:</h4>
-            <div className='summary-cards-container'>
-              <ArtistCard name='Artista 1' rutaImg={defaultImg}/>
-              <ArtistCard name='Artista 2' rutaImg={defaultImg}/>
-            </div>
           </div>
-          <Link to={'/checkout'} className='text1 boton oscuro'>Ir a pagar</Link>
-          <Link to={'/tienda'} className='text1 boton claro'>Seguir Comprando</Link>
+          <span className="divider"></span>
+          <span className='boton primario'>
+            <Link to={'/checkout'} className='headline3 h-semibold'>Ir a pagar</Link>
+          </span>
+          <span className='boton secundario'>
+            <Link to={'/tienda'} className='headline3 h-semibold'>Seguir Comprando</Link>
+          </span>
         </section>
       </section>
     </main>

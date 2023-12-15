@@ -1,6 +1,6 @@
 import { deleteProductFromCart } from '../../../redux/features/shoppingCartSlice';
 import { useAppDispatch } from '../../../redux/store';
-import trashCan from '../../icons/Delete.svg'
+import trashCan from '../../icons/trash-2.svg'
 import defaultImg from '../../img/defaultImg.png'
 import './index.css';
 
@@ -22,21 +22,10 @@ export function ProductCardH (producto: ProductsInterface) {
       </figure>
       <div className='card-h-info'>
         <img className='eliminar' src={trashCan} alt="eliminar" onClick={() => dispatch(deleteProductFromCart(producto.id))} />
-        <h4 className='headline2'>{producto.title}</h4>
-        <p className='text1'>Talla M</p>
-        <p className='text4'>{producto.description}</p>
+        <h4 className='headline2 h-medium'>{producto.title}</h4>
         <div className='card-h-info--ap'>
-          <div className='card-h-info--artista'>
-              <p className='text5'>Ilustrado por</p>
-              <figure>
-                <img src={defaultImg} alt="Artista 1" />
-              </figure>
-              <p className='text6'>Artista 1</p>
-          </div>
-          <div className='card-h-precio'>
-            <p className='text1'>Precio</p>
-            <p className='text2'>{producto.price}</p>
-          </div>
+          <p className='text1 t-regular no-margin'>{producto.description}</p>
+          <p className='headline3 h-semibold no-margin'>{`$ ${producto.price}`}</p>
         </div>
       </div>
     </div>

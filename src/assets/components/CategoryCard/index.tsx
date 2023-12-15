@@ -8,8 +8,10 @@ interface CategoryInfo {
 export function CategoryCard(categoria: CategoryInfo) {
   return (
     <div className="card-categoria">
-      <img src={categoria.rutaImg} alt="" />
-      <span>{categoria.name}</span>
+      <figure>
+        <img src={categoria.rutaImg} alt="" />
+      </figure>
+      <span className='headline3 h-medium'>{categoria.name}</span>
     </div>
   )
 }

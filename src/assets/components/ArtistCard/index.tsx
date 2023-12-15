@@ -13,7 +13,7 @@ export function ArtistCard(artist: ArtistInfo){
       <figure className='card-artista--img'>
         <img src={artist.rutaImg} alt="" />
       </figure>
-      <span className='card-artista--name'>
+      <span className='headline3 h-medium'>
         {artist.name}
       </span>
     </div>

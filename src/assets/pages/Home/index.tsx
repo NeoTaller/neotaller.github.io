@@ -12,9 +12,10 @@ const Home = () => {
         <span className='hero-larrow'>{'<'}</span>
         <div className='hero-info'>
           <div className='hero-info--left'>
-            <h1>Título</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quas eius laudantium voluptatem qui porro nisi tempore totam quod libero nihil necessitatibus, provident fugiat quibusdam aut quaerat vero molestias. Eligendi?</p>
-            <button>Call to action</button>
+            <p className='headline2 h-bold'>Somos</p>
+            <h1 className='headline1 h-bold'>Neo-taller</h1>
+            <p className='headline2 h-bold'>La nueva forma de vestir</p>
+            <button className='headline2 h-bold'>Visita la tienda</button>
           </div>
           <div className='hero-info--right'>
             <img src={defaultImg} alt="Imagen prueba" />
@@ -23,72 +24,73 @@ const Home = () => {
         <span className='hero-rarrow'>{'>'}</span>
       </section>
       <section className='hoy'>
-        <h3>¿Qué buscas hoy?</h3>
+        <h3 className='headline1 h-bold'>¿Qué buscas hoy?</h3>
         <div className='hoy-categorias'>
           <CategoryCard rutaImg={defaultImg} name={'Categoría 1'}></CategoryCard>
           <CategoryCard rutaImg={defaultImg} name={'Categoría 2'}></CategoryCard>
           <CategoryCard rutaImg={defaultImg} name={'Categoría 3'}></CategoryCard>
           <CategoryCard rutaImg={defaultImg} name={'Categoría 4'}></CategoryCard>
           <CategoryCard rutaImg={defaultImg} name={'Categoría 5'}></CategoryCard>
+          <CategoryCard rutaImg={defaultImg} name={'Categoría 6'}></CategoryCard>
+          <CategoryCard rutaImg={defaultImg} name={'Categoría 7'}></CategoryCard>
+          <CategoryCard rutaImg={defaultImg} name={'Categoría 8'}></CategoryCard>
         </div>
       </section>
       {/* =================== NOVEDADES ============================================= */}
       <section className='novedades'>
-        <h2>Recién llegados</h2>
+        <h2 className='headline1 h-bold'>Recién llegados</h2>
         <div className='novedades-cardContainer'>
-          <ProductCard id={1} rutaImg={defaultImg} title={'Prenda 1'} description={'Descripción de prenda 1. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='10990'></ProductCard>
-          <ProductCard id={2} rutaImg={defaultImg} title={'Prenda 2'} description={'Descripción de prenda 2. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='20000'></ProductCard>
-          <ProductCard id={3} rutaImg={defaultImg} title={'Prenda 3'} description={'Descripción de prenda 3. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='45000'></ProductCard>
-          <ProductCard id={4} rutaImg={defaultImg} title={'Prenda 4'} description={'Descripción de prenda 4. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='10000'></ProductCard>
-          <ProductCard id={5} rutaImg={defaultImg} title={'Prenda 5'} description={'Descripción de prenda 5. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='37990'></ProductCard>
+          <ProductCard id={1} rutaImg={defaultImg} title={'Prenda 1'} talla={'XL'} price='10990'></ProductCard>
+          <ProductCard id={2} rutaImg={defaultImg} title={'Prenda 2'} talla={'XL'} price='20000'></ProductCard>
+          <ProductCard id={3} rutaImg={defaultImg} title={'Prenda 3'} talla={'XL'} price='45000'></ProductCard>
+          <ProductCard id={4} rutaImg={defaultImg} title={'Prenda 4'} talla={'XL'} price='10000'></ProductCard>
+          <ProductCard id={5} rutaImg={defaultImg} title={'Prenda 5'} talla={'XL'} price='10990'></ProductCard>
+          <ProductCard id={6} rutaImg={defaultImg} title={'Prenda 6'} talla={'XL'} price='20000'></ProductCard>
+          <ProductCard id={7} rutaImg={defaultImg} title={'Prenda 7'} talla={'XL'} price='45000'></ProductCard>
+          <ProductCard id={8} rutaImg={defaultImg} title={'Prenda 8'} talla={'XL'} price='10000'></ProductCard>
         </div>
       </section>
       {/* ===================== OFERTAS ==========================================*/}
       <section className='ofertas'>
-        <h2>Ofertas del mes</h2>
+        <h2 className='headline1 h-bold'>Ofertas del mes</h2>
         <div className='novedades-cardContainer'>
-          <ProductCard id={6} rutaImg={defaultImg} title={'Prenda 6'} description={'Descripción de prenda 6. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='15990'></ProductCard>
-          <ProductCard id={7} rutaImg={defaultImg} title={'Prenda 7'} description={'Descripción de prenda 7. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='48990'></ProductCard>
-          <ProductCard id={8} rutaImg={defaultImg} title={'Prenda 8'} description={'Descripción de prenda 8. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='24990'></ProductCard>
-          <ProductCard id={9} rutaImg={defaultImg} title={'Prenda 9'} description={'Descripción de prenda 9. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='16990'></ProductCard>
-          <ProductCard id={10} rutaImg={defaultImg} title={'Prenda 10'} description={'Descripción de prenda 10. Lorem ipsum dolor sit amet consectetur, adipisicing elit.'} price='8990'></ProductCard>
+          <ProductCard id={9} rutaImg={defaultImg} title={'Prenda 9'} talla={'XL'} price='15990'></ProductCard>
+          <ProductCard id={10} rutaImg={defaultImg} title={'Prenda 10'} talla={'XL'} price='48990'></ProductCard>
+          <ProductCard id={11} rutaImg={defaultImg} title={'Prenda 11'} talla={'XL'} price='24990'></ProductCard>
+          <ProductCard id={12} rutaImg={defaultImg} title={'Prenda 12'} talla={'XL'} price='16990'></ProductCard>
+          <ProductCard id={13} rutaImg={defaultImg} title={'Prenda 13'} talla={'XL'} price='15990'></ProductCard>
+          <ProductCard id={14} rutaImg={defaultImg} title={'Prenda 14'} talla={'XL'} price='48990'></ProductCard>
+          <ProductCard id={15} rutaImg={defaultImg} title={'Prenda 15'} talla={'XL'} price='24990'></ProductCard>
+          <ProductCard id={16} rutaImg={defaultImg} title={'Prenda 16'} talla={'XL'} price='16990'></ProductCard>
         </div>
       </section>
       {/* ============== ARTISTAS ==================== */}
       <section className='home-artistas'>
-        <section className='artistas-info--container'>
-          <h2>Conoce a nuestros artistas</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quos eum reprehenderit labore dolorum totam voluptates, explicabo porro ratione asperiores aliquid dolor, delectus, ipsam quam impedit quis? Animi, nobis harum.</p>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam doloremque quibusdam tempora eveniet blanditiis, quod id magni fugiat, suscipit ea repellendus! Hic obcaecati nemo a ad quidem maxime maiores dolores!</p>
+        <h3 className='headline1 h-bold'>Conoce a nuestros artistas</h3>
+        <p className='headline1 t-medium'>Una gran variedad de artistas y diseñadores de moda</p>
+        <section className='artistas-cards--container'>
+          <ArtistCard rutaImg={defaultImg} name='Artista Uno'></ArtistCard>
+          <ArtistCard rutaImg={defaultImg} name='Artista Dos'></ArtistCard>
+          <ArtistCard rutaImg={defaultImg} name='Artista Tres'></ArtistCard>
+          <ArtistCard rutaImg={defaultImg} name='Artista Cuatro'></ArtistCard>
+          <ArtistCard rutaImg={defaultImg} name='Artista Cinco'></ArtistCard>
+          <ArtistCard rutaImg={defaultImg} name='Artista Seis'></ArtistCard>
+          <ArtistCard rutaImg={defaultImg} name='Artista Siete'></ArtistCard>
+          <ArtistCard rutaImg={defaultImg} name='Artista Ocho'></ArtistCard>
         </section>
-        <section className='artistas-info--pictures'>
-          <span className='hero-larrow'>{'<'}</span>
-          <div className="artistas-cards--container">
-            <ArtistCard rutaImg={defaultImg} name='Artista Uno'></ArtistCard>
-            <ArtistCard rutaImg={defaultImg} name='Artista Dos'></ArtistCard>
-            <ArtistCard rutaImg={defaultImg} name='Artista Tres'></ArtistCard>
-            <ArtistCard rutaImg={defaultImg} name='Artista Cuatro'></ArtistCard>
-            <ArtistCard rutaImg={defaultImg} name='Artista Cinco'></ArtistCard>
-            <ArtistCard rutaImg={defaultImg} name='Artista Seis'></ArtistCard>
-
-          </div>
-          <span className='hero-rarrow'>{'>'}</span>
-        </section>
-      </section>
-      {/* ============= NEWSLETTER OFERTAS ================== */}
-      <section className='formulario-ofertas'>
-        <h2>
-          Aprovecha nuestras ofertas exclusivas!
-        </h2>
-        <p>Regístrate con nosotros y aprovecha miles de descuentos y otros beneficios!</p>
-        <button>Registrarme</button>
+        <p className='headline1 t-medium'>Y muchos otros....Conócelos aquí</p>
       </section>
       {/* ============ FORMULARIO VENTA ================ */}
       <section className='formulario-venta'>
-        <h2>
-          ¿Quieres vender tu ropa?
-        </h2>
-        <button>Contáctanos!</button>
+        <h2 className='headline1 h-semibold'>¿Quieres vender tu ropa?</h2>
+        <p className='headline2 h-regular'>¡Compramos la ropa en buen estado que ya no quieras usar!</p>
+        <button className='headline3 h-semibold'>¡Obvio que si!</button>
+      </section>
+      {/* ============= NEWSLETTER OFERTAS ================== */}
+      <section className='formulario-ofertas'>
+        <h2 className='headline1 h-semibold'>Aprovecha nuestras ofertas exclusivas</h2>
+        <p className='headline2 h-regular'>Regístrate con nosotros y aprovecha miles de descuentos y otros beneficios!</p>
+        <button className='headline3 h-semibold'>¡Obvio que si!</button>
       </section>
     </main>
   )

@@ -1,0 +1,38 @@
+.card-categoriaSm{
+  background-color: var(--white);
+  height: 186px;
+  width: 114px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  border-radius: 8px;
+  border: 2px solid var(--black);
+  padding: 8px 8px 16px 8px;
+  cursor: pointer;
+}
+
+.card-categoriaSm:hover{
+  box-shadow: 4px 4px 0px 0px var(--black);
+}
+
+.card-categoriaSm figure{
+  width: 128px;
+  height: 128px;
+  border-radius: 4px;
+  border: 2px solid var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-categoriaSm figure img{
+  width: 70%;
+}
+
+.card-categoriaSm span{
+  display: block;
+  width: 100%;
+  text-align: center;
+}

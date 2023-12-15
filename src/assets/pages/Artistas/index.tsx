@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { ArtistCardAlt } from '../../components/ArtistCardAlt';
 import defaultImg from '../../img/defaultImg.png';
+import { ArtistCard } from '../../components/ArtistCard';
 import './index.css'
 
 const artistasObj = [
@@ -21,17 +21,21 @@ const artistasObj = [
 const Artistas = () => {
   return (
     <main className="artistas-main">
-      <h2 className='artistas-title headline1'>Artistas</h2>
+      <h2 className='artistas-title headline1 h-semibold '>Nuestros Artistas</h2>
+      <h3 className='headline2 h-semibold h3center'>!Aquí podrás encontrar a una gran variedad de artistas, incluyendo Ilustradores y Diseñadores de moda!</h3>
+      <p className='text3 t-regular center'> te invitamos a conocerlos, solo entra a su perfil y deléitate con sus obras y colecciones de ropa que tenemos para ti </p>
       <div className="artistas-cards-container">
         {
           artistasObj.map((a) => (
-          <ArtistCardAlt rutaImg={a.rutaImg} name={a.name}/>
+          <ArtistCard rutaImg={a.rutaImg} name={a.name}/>
           ))
         }
       </div>
       <div className='artistas-contact-container'>
-        <h4 className='headline1'>¡Si eres ilustrador o diseñador textil<br/> y deseas ser parte de nuestro proyecto!</h4>
-        <Link to={'/contacto'} className='artistas-contact-button headline3'>Todo comienza con un click</Link>
+        <h4 className='headline1 h-semibold'>Si eres ilustrador o diseñador textil<br/> y deseas ser parte de nuestro proyecto...</h4>
+        <Link to={'/contacto'} className='artistas-contact-button'>
+          <span className='headline3 h-semibold'>¡Postula aquí!</span>
+        </Link>
       </div>
     </main>
   )

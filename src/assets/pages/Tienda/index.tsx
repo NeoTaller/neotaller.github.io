@@ -5,6 +5,8 @@ import defaultImg from '../../img/defaultImg.png';
 import './index.css'
 import { getProductos } from "../../../services/productos";
 import { GetProducts } from '../../../interfaces/Products';
+import { PageTitle } from "../../components/PageTitle";
+import { CategoryPicker } from "../../components/CategoryPicker";
 
 const Tienda = () => {
 
@@ -22,47 +24,11 @@ const Tienda = () => {
 
   return(
     <>
+      <PageTitle titulo="Toda la tienda" breadcrum="Home > Tienda >" />
+      <CategoryPicker />
       <main className="mainTienda">
         <SideBar></SideBar>
         <section className="productos">
-          <div className="categorias">
-            <div className="categoriaRound">
-              <div className="img-container">
-                <img src={defaultImg} alt="" />
-              </div>
-              <p>Todo</p>
-            </div>
-            <div className="categoriaRound">
-              <div className="img-container">
-                <img src={defaultImg} alt="" />
-              </div>
-              <p>Poleras</p>
-            </div>
-            <div className="categoriaRound">
-              <div className="img-container">
-                <img src={defaultImg} alt="" />
-              </div>
-              <p>Jeans</p>
-            </div>
-            <div className="categoriaRound">
-              <div className="img-container">
-                <img src={defaultImg} alt="" />
-              </div>
-              <p>Chaquetas</p>
-            </div>
-            <div className="categoriaRound">
-              <div className="img-container">
-                  <img src={defaultImg} alt="" />
-                </div>
-                <p>Vestidos</p>
-            </div>
-            <div className="categoriaRound">
-              <div className="img-container">
-                  <img src={defaultImg} alt="" />
-              </div>
-              <p>Zapatillas</p>
-            </div>
-          </div>
           <section className="card-container">
             {
               products.map(({id, nombre, descripcion, precio}) => 
@@ -71,7 +37,7 @@ const Tienda = () => {
                   id={id}
                   rutaImg={defaultImg} 
                   title={nombre} 
-                  description={descripcion} 
+                  talla={descripcion} 
                   price={precio}
                 />
               ) 

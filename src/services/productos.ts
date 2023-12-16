@@ -15,3 +15,16 @@ export const getProductos = async() => {
     }
 
 }
+
+export const getProductoByCategoria = async(id:number) => {
+
+    try {
+        const { data } = await axiosIntance.get<GetProducts[]>(`/productos/categoria/${id}`);
+    
+        return data;
+        
+    } catch (error) {
+        console.log(error)
+    }
+
+}

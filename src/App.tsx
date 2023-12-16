@@ -10,7 +10,10 @@ import { Detalle } from './assets/pages/Detalle';
 import { Carrito } from './assets/pages/Carrito';
 import { Checkout } from './assets/pages/Checkout';
 import { DetalleArtista } from './assets/pages/DetalleArtista';
+import { LoginModal } from './assets/components/LoginModal';
+import { CreacionProducto } from './assets/pages/CreacionProducto';
 import './App.css'
+import { ProtectedRoute } from './assets/components/ProtectedRoute';
 
 
 function App() {
@@ -19,6 +22,7 @@ function App() {
     <>
     <BrowserRouter >
       <Header />
+      <LoginModal />
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/tienda' element={<Tienda />}/>
@@ -31,6 +35,11 @@ function App() {
         </Route>
         <Route path='/carrito' element={<Carrito />}/>
         <Route path='/checkout' element={<Checkout />}/>
+        <Route path='/crear-producto' element={
+          <ProtectedRoute>
+            <CreacionProducto />
+          </ProtectedRoute>
+        }/>
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -6,8 +6,11 @@ import userIcon from '../../icons/Log in w.svg'
 import cartIcon from '../../icons/shopping-cart w.svg'
 import neotallerLogo from '../../img/NeoTaller_Logo_W.svg'
 import './index.css'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../../redux/store'
 
 export function Header(){
+  const user = useSelector((state: RootState) => state.user)
 
   const [isCartVisible, setIsCartVisible] = useState(false)
 
@@ -33,6 +36,10 @@ export function Header(){
         <li>
           <NavLink to={'/nosotros'} className={'headline3 h-semibold'}>Nosotros</NavLink>
         </li>
+        {user.isAuth && 
+        <li>
+          <NavLink to={'/crear-producto'} className={'headline3 h-semibold'}>Crear Producto</NavLink>
+        </li>}
       </ul>
     </nav>
     <section className='header-right'>

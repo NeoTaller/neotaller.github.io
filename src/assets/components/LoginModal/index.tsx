@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './index.css'
 import { Md5 } from 'ts-md5'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../../redux/store'
@@ -7,7 +6,8 @@ import { logout } from '../../../redux/features/userSlice'
 import { useDispatch } from 'react-redux'
 import { jwtDecode } from 'jwt-decode'
 import { login } from '../../../redux/features/userSlice'
-
+import { toggleLoginModal } from '../../../redux/features/loginModalSlice'
+import './index.css'
 
 interface LoginResponse{
   access_token: string
@@ -35,11 +35,13 @@ const LoginModal = () => {
 
   const dispatch = useDispatch()
   const user = useSelector((state: RootState) => state.user)
+  const LoginVisible = useSelector((state: RootState) => state.loginModal)
 
   const [form, setForm] = useState({
     username: '',
     password: ''
   })
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({
@@ -92,18 +94,29 @@ const LoginModal = () => {
   }
 
   return (
-      <div>
-        {!user.isAuth &&
-        <form>
-          <h1>Login</h1>
-          <label htmlFor='username'>Nombre de Usuario</label>
-          <input type='text' placeholder='Username' name='username' onChange={handleChange}/>
-          <label htmlFor='password'>Contraseña</label>
-          <input type='password' placeholder='Password' name='password' onChange={handleChange}/>
-          <button type='submit' onClick={handleSubmit}>Login</button>
-        </form>
-        }
-        {user.isAuth && <button onClick={() => dispatch(logout())}>Logout</button>}
+    LoginVisible.visible && 
+      <div className={'login-modal active-modal'}>
+        <div className='login-modal-overlay' onClick={() => dispatch(toggleLoginModal())}></div>
+        <div className="login-modal-content">
+          {!user.isAuth &&
+          <form>
+            <h1>Login</h1>
+            <label htmlFor='username'>Nombre de Usuario</label>
+            <input type='text' placeholder='Username' name='username' onChange={handleChange}/>
+            <label htmlFor='password'>Contraseña</label>
+            <input type='password' placeholder='Password' name='password' onChange={handleChange}/>
+            <button type='submit' onClick={handleSubmit}>Login</button>
+          </form>
+          }
+          {user.isAuth && 
+          <div>
+            <h1>¡Que bueno tenerte de vuelta!</h1>
+
+            <p>¿Qué quieres hacer hoy?</p>
+            <button onClick={() => dispatch(logout())}>Logout</button>
+            </div>}
+          <button onClick={() => dispatch(toggleLoginModal())}>Close</button>
+        </div>
       </div>
   )
 }

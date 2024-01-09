@@ -6,11 +6,14 @@ import userIcon from '../../icons/Log in w.svg'
 import cartIcon from '../../icons/shopping-cart w.svg'
 import neotallerLogo from '../../img/NeoTaller_Logo_W.svg'
 import './index.css'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../../redux/store'
+import { toggleLoginModal } from '../../../redux/features/loginModalSlice'
 
 export function Header(){
   const user = useSelector((state: RootState) => state.user)
+
+  const dispatch = useDispatch()
 
   const [isCartVisible, setIsCartVisible] = useState(false)
 
@@ -44,8 +47,8 @@ export function Header(){
     </nav>
     <section className='header-right'>
       <ul>
-        <li><a href="#"><img className='icon' src={searchIcon} alt="Buscar" /></a></li>
-        <li><a href="#"><img className='icon' src={userIcon} alt="Usuario" /></a></li>
+        <li><img className='icon' src={searchIcon} alt="Buscar" /></li>
+        <li onClick={() => dispatch(toggleLoginModal())} ><img className='icon' src={userIcon} alt="Usuario" /></li>
         <li onClick={() => setIsCartVisible(!isCartVisible)}><img className='icon' src={cartIcon} alt="Carro"/></li>
       </ul>
     </section>

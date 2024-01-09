@@ -1,22 +1,42 @@
 
+
 export interface GetProducts {
-    id:          number;
-    nombre:      string;
-    descripcion: string;
-    precio:      string;
+  id: number;
+	esFavorito?: boolean;
+	nombre: string;
+	descripcion: string;
+	talla: string;
+	precioNormal: string;
+	esOferta?: boolean;
+	precioOferta?: string;
+	condicion?: string;
+	material?: string;
+	medidaCadera?: number;
+	medidaPecho?: number;
+	medidaLargo?: number;
+	ilustradorId?: number;
+	img1?: string;
+	img2?: string;
+	img3?: string;
 }
+
 
 export interface GetProductDetail {
-    id:          number;
-    idMarca:     number;
-    nombre:      string;
-    descripcion: string;
-    precio:      string;
-    inventario: inventario[];
-}
-
-interface inventario {
   id: number;
-  talla: string;
-  cantidad: number; 
+	esFavorito?: boolean;
+	nombre: string;
+	descripcion: string;
+	talla: string;
+	precioNormal: string;
+	esOferta?: boolean;
+	precioOferta?: string;
+	condicion?: string;
+	material?: string;
+	medidaCadera?: number;
+	medidaPecho?: number;
+	medidaLargo?: number;
+	ilustradorId?: number;
+	img1?: string;
+	img2?: string;
+	img3?: string;
 }

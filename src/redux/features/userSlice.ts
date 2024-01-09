@@ -21,11 +21,14 @@ export const userSlice = createSlice({
       state = {... action.payload}
       localStorage.setItem('_Neotaller_user', JSON.stringify(state));
       console.log(state);
+      return state;
     },
     logout: (state) => {
       state = initialState;
       console.log(state);
       localStorage.removeItem('_Neotaller_user')
+      localStorage.removeItem('token')
+      return state;
     }
   }
 });

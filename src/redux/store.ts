@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./features/userSlice";
 import shoppingCartReducer from "./features/shoppingCartSlice";
+import loginModalReducer from "./features/loginModalSlice";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
 
@@ -8,6 +9,7 @@ export const store = configureStore({
   reducer: {
     shoppingCart: shoppingCartReducer,
     user: userReducer,
+    loginModal: loginModalReducer,
   }
 });
 

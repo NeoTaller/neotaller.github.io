@@ -27,10 +27,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .card figure img{
-  width: 70%;
+  height: 100%;
 }
 
 .card-middle{

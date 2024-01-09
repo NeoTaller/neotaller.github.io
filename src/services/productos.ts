@@ -6,7 +6,7 @@ import { GetProducts } from "../interfaces/Products";
 export const getProductos = async() => {
 
     try {
-        const { data } = await axiosIntance.get<GetProducts[]>("/productos");
+        const { data } = await axiosIntance.get<GetProducts[]>("/productos?limit=100");
     
         return data;
         

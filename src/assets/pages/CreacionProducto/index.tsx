@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { PageTitle } from "../../components/PageTitle"
+import './index.css'
 
 const CreacionProducto = () => {
 
@@ -28,8 +30,8 @@ const CreacionProducto = () => {
     fetch("http://161.97.138.249:3000/productos",{
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        'Authentication': 'Bearer ' + token
+        "Content-Type": "application/json",
+        "Authentication": `${token}`,
       },
       body: JSON.stringify({
         "nombre": form.nombre,
@@ -38,9 +40,9 @@ const CreacionProducto = () => {
         "categoria": form.categoria,
         "marca": form.marca,
         "proveedor": form.proveedor,
-        "img1": form.img1.split(',')[1],
-        // "img2": form.img2.split(',')[1],
-        // "img3": form.img3.split(',')[1]
+        "img1base64": form.img1.split(',')[1],
+        "img2base64": form.img2.split(',')[1],
+        "img3base64": form.img3.split(',')[1]
       })
     }).then(res => {
       if (res.ok) {
@@ -67,33 +69,119 @@ const CreacionProducto = () => {
 
 
   return (
-    <main>
-      <h1>Creacion de Producto</h1>
+    <>
+    <PageTitle titulo='Nuevo producto' breadcrum="Admin > Creación de producto" />
+    <main className='creacion-producto-main'>
       <form>
-        <label htmlFor='nombre'>Nombre</label>
-        <input type='text' name='nombre' id='nombre' placeholder='Nombre del producto' onChange={handleChange}/>
-        <label htmlFor='descripcion'>Descripcion</label>
-        <input type='text' name='descripcion' id='descripcion' placeholder='Descripcion del producto' onChange={handleChange}/>
-        <label htmlFor='precio'>Precio</label>
-        <input type='text' name='precio' id='precio' placeholder='Precio del producto' onChange={handleChange} />
-        <label htmlFor='categoria'>Categoria</label>
-        <input type='text' name='categoria' id='categoria' placeholder='Categoria del producto' onChange={handleChange}/>
-        <label htmlFor='marca'>Marca</label>
-        <input type='text' name='marca' id='marca' placeholder='Marca del producto' onChange={handleChange}/>
-        <label htmlFor='proveedor'>Proveedor</label>
-        <input type='text' name='proveedor' id='proveedor' placeholder='proveedor del producto' onChange={handleChange}/>
-        <label htmlFor='img1'>Imagen 1</label>
-        {form.img1 ? <img src={form.img1} alt='Imagen 1' /> :       <input type='file' accept="image/*" name='img1' id='img1' onChange={e => convert2base64(e)}/>}
-        <label htmlFor='img2'>Imagen 2</label>
-        {form.img2 ? <img src={form.img2} alt='Imagen 2' /> :
-        <input type='file' accept="image/*" name='img2' id='img2' onChange={e => convert2base64(e)}/>}
-        <label htmlFor='img3'>Imagen 3</label>
-        {form.img3 ? <img src={form.img3} alt='Imagen 3' /> :
-        <input type='file' accept="image/*" name='img3' id='img3' onChange={e => convert2base64(e)}/>}
+        <div className="creacion-info">
+          <h2>Información principal</h2>
+          <div className="creacion-info-item">
+            <label htmlFor='nombre'>Nombre del producto</label>
+            <input type='text' name='nombre' id='nombre' placeholder='Ingresa el nombre del producto' onChange={handleChange}/>
+          </div>
+          <div className="creacion-info-doblecolumna">
+            <div className="creacion-info-item">
+              <label htmlFor='precio'>Precio del producto</label>
+              <input type='text' name='precio' id='precio' placeholder='Precio del producto' onChange={handleChange} />
+            </div>
+            <div className="creacion-info-item">
+              <div>
+                <input type='checkbox' name='esOferta' id='esOferta' onChange={handleChange} value={'oferta'} />
+                <label htmlFor='esOferta'>Precio oferta</label>
+              </div>
+              <input type="text" name="precioOferta" id="precioOferta" placeholder="Ingresa oferta" onChange={handleChange} />
+            </div>
+          </div>
+          <div className="creacion-info-item">
+            <label htmlFor='talla'>Selecciona la talla del producto</label>
+            <div className="creacion-info-multiple">
+              <section>
+                <input type="radio" name="talla" id={'talla-xs'} value={'XS'} onSelect={handleChange} />
+                <label htmlFor="talla-xs">XS</label>
+              </section>
+              <section>
+                <input type="radio" name="talla" id={'talla-s'} value={'S'} onSelect={handleChange} />
+                <label htmlFor="talla-xs">S</label>
 
-        <button type='submit' onClick={handleSubmit}>Crear</button>
+              </section>
+              <section>
+                <input type="radio" name="talla" id={'talla-m'} value={'M'} onSelect={handleChange} />
+                <label htmlFor="talla-xs">M</label>
+
+              </section>
+              <section>
+                <input type="radio" name="talla" id={'talla-l'} value={'L'} onSelect={handleChange} />
+                <label htmlFor="talla-xs">L</label>
+
+              </section>
+              <section>
+                <input type="radio" name="talla" id={'talla-xl'} value={'XL'} onSelect={handleChange} />
+                <label htmlFor="talla-xs">XL</label>
+
+              </section>
+              <section>
+                <input type="radio" name="talla" id={'talla-xxl'} value={'XXL'} onSelect={handleChange} />
+                <label htmlFor="talla-xs">XXL</label>
+
+              </section>
+              
+            </div>
+          </div>
+          
+          <h2>Especificaciones del producto</h2>
+          <div className="creacion-info-multiple">
+            <div className="creacion-info-item">
+              <label htmlFor='cadera'>Cadera</label>
+              <input type='text' name='cadera' id='cadera' placeholder='cm' onChange={handleChange}/>
+            </div>
+            <div className="creacion-info-item">
+              <label htmlFor='pecho'>Pecho</label>
+              <input type='text' name='pecho' id='pecho' placeholder='cm' onChange={handleChange}/>
+            </div>
+            <div className="creacion-info-item">
+              <label htmlFor='largo'>Largo</label>
+              <input type='text' name='largo' id='largo' placeholder='cm' onChange={handleChange}/>
+            </div>
+          </div>
+
+          <div className="creacion-info-item">
+            <label htmlFor='descripcion'>Descripcion</label>
+            <input type='text' name='descripcion' id='descripcion' placeholder='Descripcion del producto' onChange={handleChange}/>
+          </div>
+          
+          <div className="creacion-info-item">
+            <label htmlFor='condicion'>Condicion</label>
+            <input type='text' name='categoria' id='categoria' placeholder='Categoria del producto' onChange={handleChange}/>
+          </div>
+          <div className="creacion-info-item">
+            <label htmlFor='material'>Material</label>
+            <input type='text' name='material' id='material' placeholder='Ingresa el material' onChange={handleChange}/>
+          </div>
+        </div>
+        <div className="creacion-fotos">
+          <h2>Fotos</h2>
+          <div className="creacion-img-container">
+            <label htmlFor='img1'>Imagen 1</label>
+            {form.img1 ? <img className="creacion-img-preview" src={form.img1} alt='Imagen 1' /> : <input type='file' accept="image/*" name='img1' id='img1' onChange={e => convert2base64(e)}/>}
+          </div>
+          <div className="creacion-img-container">
+            <label htmlFor='img2'>Imagen 2</label>
+            {form.img2 ? <img className="creacion-img-preview" src={form.img2} alt='Imagen 2' /> : <input type='file' accept="image/*" name='img2' id='img2' onChange={e => convert2base64(e)}/>}
+          </div>
+          <div className="creacion-img-container">
+            <label htmlFor='img3'>Imagen 3</label>
+            {form.img3 ? <img className="creacion-img-preview" src={form.img3} alt='Imagen 3' /> : <input type='file' accept="image/*" name='img3' id='img3' onChange={e => convert2base64(e)}/>}
+          </div>
+          <h2>Artista</h2>
+          <div className="creacion-info-item">
+            <label htmlFor="artista">Nombre del artista</label>
+            <input type='text' name='artista' id='artista' placeholder='Ingresa el nombre del artista' onChange={handleChange}/>
+          </div>
+          <button type='submit' onClick={handleSubmit}>Crear</button>
+        </div>
       </form>
     </main>
+    </>
   )
 }
 

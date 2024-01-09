@@ -10,19 +10,23 @@ import { Detalle } from './assets/pages/Detalle';
 import { Carrito } from './assets/pages/Carrito';
 import { Checkout } from './assets/pages/Checkout';
 import { DetalleArtista } from './assets/pages/DetalleArtista';
-import { LoginModal } from './assets/components/LoginModal';
 import { CreacionProducto } from './assets/pages/CreacionProducto';
 import './App.css'
 import { ProtectedRoute } from './assets/components/ProtectedRoute';
+import { LoginModal } from './assets/components/LoginModal';
+import { useSelector } from 'react-redux';
+import { RootState } from './redux/store';
 
 
 function App() {
+
+  const LoginVisible = useSelector((state: RootState) => state.loginModal)
 
   return (
     <>
     <BrowserRouter >
       <Header />
-      <LoginModal />
+      {LoginVisible.visible && <LoginModal />}
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/tienda' element={<Tienda />}/>

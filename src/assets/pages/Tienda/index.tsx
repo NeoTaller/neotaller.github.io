@@ -8,6 +8,7 @@ import { GetProducts } from '../../../interfaces/Products';
 import { PageTitle } from "../../components/PageTitle";
 import { CategoryPicker } from "../../components/CategoryPicker";
 
+
 const Tienda = () => {
 
   const [products, setProducts] = useState<GetProducts[]>([])
@@ -21,6 +22,7 @@ const Tienda = () => {
     getProducts()
   }, []);
   
+  //Eliminar el filtro de ilustrador
 
   return(
     <>
@@ -31,14 +33,15 @@ const Tienda = () => {
         <section className="productos">
           <section className="card-container">
             {
-              products.map(({id, nombre, descripcion, precio}) => 
+              products.map((producto) => 
                 <ProductCard 
-                  key={id}
-                  id={id}
-                  rutaImg={defaultImg} 
-                  title={nombre} 
-                  talla={descripcion} 
-                  price={precio}
+                  key={producto.id}
+                  id={producto.id}
+                  img1={producto.img1 ? producto.img1 : defaultImg} 
+                  talla={producto.talla}
+                  nombre={producto.nombre} 
+                  descripcion={producto.descripcion} 
+                  precioNormal={producto.precioNormal}
                 />
               ) 
             }

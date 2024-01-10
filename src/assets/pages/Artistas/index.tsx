@@ -1,21 +1,41 @@
 import { Link } from 'react-router-dom';
-import defaultImg from '../../img/defaultImg.png';
 import { ArtistCard } from '../../components/ArtistCard';
+import artista1 from '../../img/artistas/2.png'
+import artista2 from '../../img/artistas/16.png'
+import artista3 from '../../img/artistas/15.png'
+import artista4 from '../../img/artistas/1.png'
+import artista5 from '../../img/artistas/3.png'
+import artista6 from '../../img/artistas/4.png'
+import artista7 from '../../img/artistas/5.png'
+import artista8 from '../../img/artistas/6.png'
+import artista9 from '../../img/artistas/7.png'
+import artista10 from '../../img/artistas/8.png'
+import artista11 from '../../img/artistas/9.png'
+import artista12 from '../../img/artistas/10.png'
+import artista13 from '../../img/artistas/11.png'
+import artista14 from '../../img/artistas/12.png'
+import artista15 from '../../img/artistas/13.png'
+import artista16 from '../../img/artistas/14.png'
 import './index.css'
 
+
 const artistasObj = [
-  {rutaImg: defaultImg, name: 'Artista 1'},
-  {rutaImg: defaultImg, name: 'Artista 2'},
-  {rutaImg: defaultImg, name: 'Artista 3'},
-  {rutaImg: defaultImg, name: 'Artista 4'},
-  {rutaImg: defaultImg, name: 'Artista 5'},
-  {rutaImg: defaultImg, name: 'Artista 6'},
-  {rutaImg: defaultImg, name: 'Artista 7'},
-  {rutaImg: defaultImg, name: 'Artista 8'},
-  {rutaImg: defaultImg, name: 'Artista 9'},
-  {rutaImg: defaultImg, name: 'Artista 10'},
-  {rutaImg: defaultImg, name: 'Artista 11'},
-  {rutaImg: defaultImg, name: 'Artista 12'},
+  {rutaImg: artista1, name: 'Jimena Ilustra'},
+  {rutaImg: artista2, name: 'ung fio'},
+  {rutaImg: artista3, name: 'sukinpan'},
+  {rutaImg: artista4, name: 'no.nonino'},
+  {rutaImg: artista5, name: 'Hoshibunn'},
+  {rutaImg: artista6, name: 'Nemupan'},
+  {rutaImg: artista7, name: 'Pulpali'},
+  {rutaImg: artista8, name: 'Chico Crucial'},
+  {rutaImg: artista9, name: 'Tokyo Monster'},
+  {rutaImg: artista10, name: 'Daniela William'},
+  {rutaImg: artista11, name: 'Mokaccino'},
+  {rutaImg: artista12, name: 'Amelia Strong'},
+  {rutaImg: artista13, name: 'Pabloti'},
+  {rutaImg: artista14, name: 'Dibujame'},
+  {rutaImg: artista15, name: 'No plans'},
+  {rutaImg: artista16, name: 'Dos lobos'},
 ]
 
 const Artistas = () => {

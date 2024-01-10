@@ -1,21 +1,21 @@
 import { FilterDropdown } from '../FilterDropdown'
 import './index.css'
 
-const SideBar = () => {
+const SideBar = ({ setSelectedTallas, setSelectedMarcas, setSelectedArtistas, setSelectedOfertas, setSelectedPrecios } : { setSelectedTallas: React.Dispatch<React.SetStateAction<string[]>>, setSelectedMarcas:React.Dispatch<React.SetStateAction<string[]>>, setSelectedArtistas:React.Dispatch<React.SetStateAction<string[]>>, setSelectedOfertas:React.Dispatch<React.SetStateAction<string[]>>, setSelectedPrecios:React.Dispatch<React.SetStateAction<string[]>> }) => {
 
   const tallas = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
   const marcas = ['Marca 1', 'Marca 2', 'Marca 3', 'Marca 4']
   const artistas = ['Artista 1', 'Artista 2', 'Artista 3', 'Artista 4']
-  const ofertas = ['10%', '20%', '30%', '40%', '50%', '60% o más']
+  const ofertas = ['Si', 'No']
   const precios = ['Menos de $100', '$100 - $200', '$200 - $300', '$300 - $400', '$400 - $500', 'Más de $500']
 
   return (
     <aside className='filter-side-bar'>
-      <FilterDropdown title='Tallas' options={tallas} />
-      <FilterDropdown title='Marcas' options={marcas}/>
-      <FilterDropdown title='Artistas' options={artistas} />
-      <FilterDropdown title='Ofertas' options={ofertas}/>
-      <FilterDropdown title='Precio' options={precios}/>
+      <FilterDropdown setSelectedArray={setSelectedTallas} title='Tallas' options={tallas} />
+      <FilterDropdown setSelectedArray={setSelectedMarcas} title='Marcas' options={marcas}/>
+      <FilterDropdown setSelectedArray={setSelectedArtistas} title='Artistas' options={artistas} />
+      <FilterDropdown setSelectedArray={setSelectedOfertas} title='Ofertas' options={ofertas}/>
+      <FilterDropdown setSelectedArray={setSelectedPrecios} title='Precio' options={precios}/>
     </aside>
   )
 }

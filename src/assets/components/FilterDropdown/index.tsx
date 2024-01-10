@@ -1,14 +1,27 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './index.css'
 
 interface FilterDropdownProps {
   title: string
   options: string[]
+  setSelectedArray: React.Dispatch<React.SetStateAction<string[]>>
 }
 
 const FilterDropdown = (props : FilterDropdownProps) => {
 
   const [display, setDisplay] = useState(false)
+  const [selected, setSelected] = useState<string[]>([])
+
+  useEffect(() => {props.setSelectedArray(selected)}, [selected])
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.checked) {
+      setSelected(selected.filter((item) => item !== e.target.value))
+    }
+    if (e.target.checked) {
+      setSelected([...selected, e.target.value])
+    }
+  }
 
   return (
     <section className='filter-dropdown'>
@@ -25,7 +38,7 @@ const FilterDropdown = (props : FilterDropdownProps) => {
             {
               props.options.map((option) => {
                 return (
-                  <li key={option}><input type="checkbox" />{option}</li>
+                  <li key={option}><input onChange={handleChange} type="checkbox" value={option} />{option}</li>
                 )
               })
             }

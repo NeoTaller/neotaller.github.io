@@ -2,6 +2,23 @@ import { CategoryCard } from '../../components/CategoryCard';
 import { ProductCard } from '../../components/ProductCard';
 import { ArtistCard } from '../../components/ArtistCard';
 import defaultImg from '../../img/defaultImg.png';
+import catAccesorios from '../../img/Categoría_accesorios.jpg'
+import catJeans from '../../img/Categoría_jeans.jpg'
+import catJoggers from '../../img/Categoría_jogger.jpg'
+import catPoleras from '../../img/Categoría_poleras.jpg' 
+import catVestidos from '../../img/Categoría_Vestidos.jpg'
+import catZapatos from '../../img/Categoría_zapatos.jpg'
+import catChaquetas from '../../img/Categorías_chaqueta.jpg'
+import catPolerones from '../../img/Polerón_categoría.jpg'
+import artista1 from '../../img/artistas/2.png'
+import artista2 from '../../img/artistas/16.png'
+import artista3 from '../../img/artistas/15.png'
+import artista4 from '../../img/artistas/1.png'
+import artista5 from '../../img/artistas/3.png'
+import artista6 from '../../img/artistas/4.png'
+import artista7 from '../../img/artistas/5.png'
+import artista8 from '../../img/artistas/6.png'
+import homeBanner from '../../img/Home.png';
 import './index.css'
 
 
@@ -18,7 +35,7 @@ const Home = () => {
             <button className='headline2 h-bold'>Visita la tienda</button>
           </div>
           <div className='hero-info--right'>
-            <img src={defaultImg} alt="Imagen prueba" />
+            <img src={homeBanner} alt="Imagen prueba" />
           </div>
         </div>
         <span className='hero-rarrow'>{'>'}</span>
@@ -26,14 +43,14 @@ const Home = () => {
       <section className='hoy'>
         <h3 className='headline1 h-bold'>¿Qué buscas hoy?</h3>
         <div className='hoy-categorias'>
-          <CategoryCard rutaImg={defaultImg} name={'Categoría 1'}></CategoryCard>
-          <CategoryCard rutaImg={defaultImg} name={'Categoría 2'}></CategoryCard>
-          <CategoryCard rutaImg={defaultImg} name={'Categoría 3'}></CategoryCard>
-          <CategoryCard rutaImg={defaultImg} name={'Categoría 4'}></CategoryCard>
-          <CategoryCard rutaImg={defaultImg} name={'Categoría 5'}></CategoryCard>
-          <CategoryCard rutaImg={defaultImg} name={'Categoría 6'}></CategoryCard>
-          <CategoryCard rutaImg={defaultImg} name={'Categoría 7'}></CategoryCard>
-          <CategoryCard rutaImg={defaultImg} name={'Categoría 8'}></CategoryCard>
+          <CategoryCard rutaImg={catPoleras} name={'Poleras'}></CategoryCard>
+          <CategoryCard rutaImg={catJeans} name={'Jeans'}></CategoryCard>
+          <CategoryCard rutaImg={catChaquetas} name={'Chaquetas'}></CategoryCard>
+          <CategoryCard rutaImg={catVestidos} name={'Vestidos'}></CategoryCard>
+          <CategoryCard rutaImg={catZapatos} name={'Zapatos'}></CategoryCard>
+          <CategoryCard rutaImg={catJoggers} name={'Joggers'}></CategoryCard>
+          <CategoryCard rutaImg={catAccesorios} name={'Accesorios'}></CategoryCard>
+          <CategoryCard rutaImg={catPolerones} name={'Polerones'}></CategoryCard>
         </div>
       </section>
       {/* =================== NOVEDADES ============================================= */}
@@ -69,14 +86,14 @@ const Home = () => {
         <h3 className='headline1 h-bold'>Conoce a nuestros artistas</h3>
         <p className='headline1 t-medium'>Una gran variedad de artistas y diseñadores de moda</p>
         <section className='artistas-cards--container'>
-          <ArtistCard rutaImg={defaultImg} name='Artista Uno'></ArtistCard>
-          <ArtistCard rutaImg={defaultImg} name='Artista Dos'></ArtistCard>
-          <ArtistCard rutaImg={defaultImg} name='Artista Tres'></ArtistCard>
-          <ArtistCard rutaImg={defaultImg} name='Artista Cuatro'></ArtistCard>
-          <ArtistCard rutaImg={defaultImg} name='Artista Cinco'></ArtistCard>
-          <ArtistCard rutaImg={defaultImg} name='Artista Seis'></ArtistCard>
-          <ArtistCard rutaImg={defaultImg} name='Artista Siete'></ArtistCard>
-          <ArtistCard rutaImg={defaultImg} name='Artista Ocho'></ArtistCard>
+          <ArtistCard rutaImg={artista1} name='Jimena Ilustra'></ArtistCard>
+          <ArtistCard rutaImg={artista2} name='ung fio'></ArtistCard>
+          <ArtistCard rutaImg={artista3} name='sukinpan'></ArtistCard>
+          <ArtistCard rutaImg={artista4} name='no.nonino'></ArtistCard>
+          <ArtistCard rutaImg={artista5} name='Hoshibunn'></ArtistCard>
+          <ArtistCard rutaImg={artista6} name='Nemupan'></ArtistCard>
+          <ArtistCard rutaImg={artista7} name='Pulpali'></ArtistCard>
+          <ArtistCard rutaImg={artista8} name='Chico Crucial'></ArtistCard>
         </section>
         <p className='headline1 t-medium'>Y muchos otros....Conócelos aquí</p>
       </section>

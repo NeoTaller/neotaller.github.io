@@ -7,10 +7,20 @@ const CreacionProducto = () => {
   const [form, setForm] = useState({
     nombre: '',
     descripcion: '',
-    precio: '',
+    precioNormal: '',
+    esOferta: false,
+    precioOferta: '',
     categoria: '',
     marca: '',
     proveedor: '',
+    esFavorito: false,
+    talla: '',
+    condicion : '',
+    material: '',
+    medidaCadera: '',
+    medidaPecho:'',
+    medidaLargo:'',
+    ilustradorId: '',
     img1: '',
     img2: '',
     img3: ''
@@ -36,10 +46,19 @@ const CreacionProducto = () => {
       body: JSON.stringify({
         "nombre": form.nombre,
         "descripcion": form.descripcion,
-        "precio": form.precio,
+        "precioNormal": parseInt(form.precioNormal),
+        "esOferta": form.esOferta,
+        "precioOferta": parseInt(form.precioOferta),
+        "talla": form.talla,
+        "condicion": form.condicion,
         "categoria": form.categoria,
         "marca": form.marca,
+        "material": form.material,
         "proveedor": form.proveedor,
+        "esFavorito": form.esFavorito,
+        "medidaCadera": parseFloat(form.medidaCadera),
+        "medidaPecho": parseFloat(form.medidaPecho),
+        "medidaLargo": parseFloat(form.medidaLargo),
         "img1base64": form.img1.split(',')[1],
         "img2base64": form.img2.split(',')[1],
         "img3base64": form.img3.split(',')[1]
@@ -72,7 +91,7 @@ const CreacionProducto = () => {
     <>
     <PageTitle titulo='Nuevo producto' breadcrum="Admin > Creación de producto" />
     <main className='creacion-producto-main'>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="creacion-info">
           <h2>Información principal</h2>
           <div className="creacion-info-item">
@@ -81,20 +100,31 @@ const CreacionProducto = () => {
           </div>
           <div className="creacion-info-doblecolumna">
             <div className="creacion-info-item">
-              <label htmlFor='precio'>Precio del producto</label>
-              <input type='text' name='precio' id='precio' placeholder='Precio del producto' onChange={handleChange} />
+              <label htmlFor='precioNormal'>Precio del producto</label>
+              <input type='text' name='precioNormal' id='precioNormal' placeholder='Precio del producto' onChange={handleChange} />
             </div>
             <div className="creacion-info-item">
               <div>
-                <input type='checkbox' name='esOferta' id='esOferta' onChange={handleChange} value={'oferta'} />
+                <input type='checkbox' name='esOferta' id='esOferta' onChange={() => {
+                  setForm({
+                    ...form,
+                    esOferta: !form.esOferta
+                  })
+                }} value={'oferta'} />
                 <label htmlFor='esOferta'>Precio oferta</label>
               </div>
               <input type="text" name="precioOferta" id="precioOferta" placeholder="Ingresa oferta" onChange={handleChange} />
             </div>
           </div>
           <div className="creacion-info-item">
-            <label htmlFor='talla'>Selecciona la talla del producto</label>
-            <div className="creacion-info-multiple">
+            
+            <div className="creacion-info-item">
+              <label htmlFor='talla'>Talla</label>
+              <input type='text' name='talla' id='talla' placeholder='talla' onChange={handleChange}/>
+            </div>
+            {/*
+              <label htmlFor='talla'>Talla</label> 
+              <div className="creacion-info-multiple">
               <section>
                 <input type="radio" name="talla" id={'talla-xs'} value={'XS'} onSelect={handleChange} />
                 <label htmlFor="talla-xs">XS</label>
@@ -102,7 +132,6 @@ const CreacionProducto = () => {
               <section>
                 <input type="radio" name="talla" id={'talla-s'} value={'S'} onSelect={handleChange} />
                 <label htmlFor="talla-xs">S</label>
-
               </section>
               <section>
                 <input type="radio" name="talla" id={'talla-m'} value={'M'} onSelect={handleChange} />
@@ -125,22 +154,22 @@ const CreacionProducto = () => {
 
               </section>
               
-            </div>
+            </div> */}
           </div>
           
           <h2>Especificaciones del producto</h2>
           <div className="creacion-info-multiple">
             <div className="creacion-info-item">
-              <label htmlFor='cadera'>Cadera</label>
-              <input type='text' name='cadera' id='cadera' placeholder='cm' onChange={handleChange}/>
+              <label htmlFor='medidaCadera'>Cadera</label>
+              <input type='text' name='medidaCadera' id='medidaCadera' placeholder='cm' onChange={handleChange}/>
             </div>
             <div className="creacion-info-item">
-              <label htmlFor='pecho'>Pecho</label>
-              <input type='text' name='pecho' id='pecho' placeholder='cm' onChange={handleChange}/>
+              <label htmlFor='medidaPecho'>Pecho</label>
+              <input type='text' name='medidaPecho' id='medidaPecho' placeholder='cm' onChange={handleChange}/>
             </div>
             <div className="creacion-info-item">
-              <label htmlFor='largo'>Largo</label>
-              <input type='text' name='largo' id='largo' placeholder='cm' onChange={handleChange}/>
+              <label htmlFor='medidaLargo'>Largo</label>
+              <input type='text' name='medidaLargo' id='medidaLargo' placeholder='cm' onChange={handleChange}/>
             </div>
           </div>
 
@@ -148,14 +177,21 @@ const CreacionProducto = () => {
             <label htmlFor='descripcion'>Descripcion</label>
             <input type='text' name='descripcion' id='descripcion' placeholder='Descripcion del producto' onChange={handleChange}/>
           </div>
-          
           <div className="creacion-info-item">
-            <label htmlFor='condicion'>Condicion</label>
+            <label htmlFor='categoria'>Categoría</label>
             <input type='text' name='categoria' id='categoria' placeholder='Categoria del producto' onChange={handleChange}/>
+          </div>
+          <div className="creacion-info-item">
+            <label htmlFor='condicion'>Condición</label>
+            <input type='text' name='condicion' id='condicion' placeholder='Condición del producto' onChange={handleChange}/>
           </div>
           <div className="creacion-info-item">
             <label htmlFor='material'>Material</label>
             <input type='text' name='material' id='material' placeholder='Ingresa el material' onChange={handleChange}/>
+          </div>
+          <div className="creacion-info-item">
+            <label htmlFor='marca'>Marca</label>
+            <input type='text' name='marca' id='marca' placeholder='Ingresa la marca' onChange={handleChange}/>
           </div>
         </div>
         <div className="creacion-fotos">
@@ -177,7 +213,7 @@ const CreacionProducto = () => {
             <label htmlFor="artista">Nombre del artista</label>
             <input type='text' name='artista' id='artista' placeholder='Ingresa el nombre del artista' onChange={handleChange}/>
           </div>
-          <button type='submit' onClick={handleSubmit}>Crear</button>
+          <button type='submit'>Crear</button>
         </div>
       </form>
     </main>

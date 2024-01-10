@@ -8,36 +8,6 @@ import hojita from '../../icons/Leaf.svg'
 import botecito from '../../icons/trash-2.svg'
 import './index.css'
 
-
-
-// interface ProductsInterface{
-//   rutaImg: string;
-//   title: string;
-//   description: string;
-//   price: string;
-// }
-
-// const productosCarrito = [{
-//   rutaImg: defaultImg,
-//   title: 'Producto 1',
-//   description: 'Lorem ipsum dolor sit amet consectetur.',
-//   price: '$10000',
-// },
-// {
-//   rutaImg: defaultImg,
-//   title: 'Producto 2',
-//   description: 'Lorem ipsum dolor sit amet consectetur.',
-//   price: '$20000',
-// },
-// {
-//   rutaImg: defaultImg,
-//   title: 'Producto 3',
-//   description: 'Lorem ipsum dolor sit amet consectetur.',
-//   price: '$30000',
-// }
-// ]
-
-
 const Carrito = () => {
   
   const productosCarrito = useAppSelector((state) => state.shoppingCart.productList)

@@ -1,29 +1,32 @@
 import { Link } from 'react-router-dom'
 import './index.css'
 import { ProductCardHSm } from '../../components/ProductCardHSm'
-import defaultImg from '../../img/defaultImg.png'
+import { useAppSelector } from '../../../redux/store'
 
-const productosCarrito = [{
-  rutaImg: defaultImg,
-  title: 'Producto 1',
-  description: 'Lorem ipsum dolor sit amet consectetur.',
-  price: '$10000',
-},
-{
-  rutaImg: defaultImg,
-  title: 'Producto 2',
-  description: 'Lorem ipsum dolor sit amet consectetur.',
-  price: '$20000',
-},
-{
-  rutaImg: defaultImg,
-  title: 'Producto 3',
-  description: 'Lorem ipsum dolor sit amet consectetur.',
-  price: '$30000',
-}
-]
+// const productosCarrito = [{
+//   rutaImg: defaultImg,
+//   title: 'Producto 1',
+//   description: 'Lorem ipsum dolor sit amet consectetur.',
+//   price: '$10000',
+// },
+// {
+//   rutaImg: defaultImg,
+//   title: 'Producto 2',
+//   description: 'Lorem ipsum dolor sit amet consectetur.',
+//   price: '$20000',
+// },
+// {
+//   rutaImg: defaultImg,
+//   title: 'Producto 3',
+//   description: 'Lorem ipsum dolor sit amet consectetur.',
+//   price: '$30000',
+// }
+// ]
 
 const Checkout = () => {
+  const productosCarrito = useAppSelector((state) => state.shoppingCart.productList)
+  const total = useAppSelector((state) => state.shoppingCart.total)
+
   return (
     <main className="checkout">
       <section className="checkout-container">
@@ -109,10 +112,11 @@ const Checkout = () => {
           {
             productosCarrito.map((producto) => (
               <ProductCardHSm 
-              rutaImg= {producto.rutaImg}
-              title = {producto.title}
+              id={producto.id}
+              rutaImg= {producto.img}
+              title = {producto.nombre}
               description = ''
-              price= {producto.price}
+              price= {producto.precio}
               />
             ))
           }
@@ -120,7 +124,7 @@ const Checkout = () => {
           <div className='summary-cobro'>
             <div className="checkout-subtotal">
               <p className='text4'>Subtotal</p>
-              <p className='text4'>$$$$</p>
+              <p className='text4'>{total}</p>
             </div>
             <div className="checkout-subtotal">
               <p className='text4'>Código de descuento</p>

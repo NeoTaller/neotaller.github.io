@@ -20,9 +20,36 @@ import artista7 from '../../img/artistas/5.png'
 import artista8 from '../../img/artistas/6.png'
 import homeBanner from '../../img/Home.png';
 import './index.css'
+import { useEffect, useState } from 'react';
+import { GetProducts } from '../../../interfaces/Products';
+import { getProductosHome1, getProductosHome2 } from '../../../services/productos';
+
 
 
 const Home = () => {
+
+const [productosA, setProductosA] = useState<GetProducts[]>([])
+const [productosB, setProductosB] = useState<GetProducts[]>([])
+
+useEffect(() => {
+  const getProductsA = async() => {
+    const data  = await getProductosHome1()
+    if(!data) return;
+    setProductosA(data)
+  }
+  getProductsA()
+}, []);
+
+useEffect(() => {
+  const getProductsB = async() => {
+    const data  = await getProductosHome2()
+    if(!data) return;
+    setProductosB(data)
+  }
+  getProductsB()
+}, []);
+
+
   return (
     <main className='home-main'>
       <section className='hero'>
@@ -57,28 +84,42 @@ const Home = () => {
       <section className='novedades'>
         <h2 className='headline1 h-bold'>Recién llegados</h2>
         <div className='novedades-cardContainer'>
-          <ProductCard id={1} rutaImg={defaultImg} title={'Prenda 1'} talla={'XL'} price='10990'></ProductCard>
-          <ProductCard id={2} rutaImg={defaultImg} title={'Prenda 2'} talla={'XL'} price='20000'></ProductCard>
-          <ProductCard id={3} rutaImg={defaultImg} title={'Prenda 3'} talla={'XL'} price='45000'></ProductCard>
-          <ProductCard id={4} rutaImg={defaultImg} title={'Prenda 4'} talla={'XL'} price='10000'></ProductCard>
-          <ProductCard id={5} rutaImg={defaultImg} title={'Prenda 5'} talla={'XL'} price='10990'></ProductCard>
-          <ProductCard id={6} rutaImg={defaultImg} title={'Prenda 6'} talla={'XL'} price='20000'></ProductCard>
-          <ProductCard id={7} rutaImg={defaultImg} title={'Prenda 7'} talla={'XL'} price='45000'></ProductCard>
-          <ProductCard id={8} rutaImg={defaultImg} title={'Prenda 8'} talla={'XL'} price='10000'></ProductCard>
+          {
+            productosA.map((producto) => {
+              return(
+                <ProductCard 
+                  key={producto.id}
+                  id={producto.id}
+                  img1={producto.img1 ? producto.img1 : defaultImg} 
+                  talla={producto.talla}
+                  nombre={producto.nombre} 
+                  descripcion={producto.descripcion} 
+                  precioNormal={producto.precioNormal}
+                />
+              )
+            })
+          }
         </div>
       </section>
       {/* ===================== OFERTAS ==========================================*/}
       <section className='ofertas'>
         <h2 className='headline1 h-bold'>Ofertas del mes</h2>
         <div className='novedades-cardContainer'>
-          <ProductCard id={9} rutaImg={defaultImg} title={'Prenda 9'} talla={'XL'} price='15990'></ProductCard>
-          <ProductCard id={10} rutaImg={defaultImg} title={'Prenda 10'} talla={'XL'} price='48990'></ProductCard>
-          <ProductCard id={11} rutaImg={defaultImg} title={'Prenda 11'} talla={'XL'} price='24990'></ProductCard>
-          <ProductCard id={12} rutaImg={defaultImg} title={'Prenda 12'} talla={'XL'} price='16990'></ProductCard>
-          <ProductCard id={13} rutaImg={defaultImg} title={'Prenda 13'} talla={'XL'} price='15990'></ProductCard>
-          <ProductCard id={14} rutaImg={defaultImg} title={'Prenda 14'} talla={'XL'} price='48990'></ProductCard>
-          <ProductCard id={15} rutaImg={defaultImg} title={'Prenda 15'} talla={'XL'} price='24990'></ProductCard>
-          <ProductCard id={16} rutaImg={defaultImg} title={'Prenda 16'} talla={'XL'} price='16990'></ProductCard>
+        {
+            productosB.map((producto) => {
+              return(
+                <ProductCard 
+                  key={producto.id}
+                  id={producto.id}
+                  img1={producto.img1 ? producto.img1 : defaultImg} 
+                  talla={producto.talla}
+                  nombre={producto.nombre} 
+                  descripcion={producto.descripcion} 
+                  precioNormal={producto.precioNormal}
+                />
+              )
+            })
+          }
         </div>
       </section>
       {/* ============== ARTISTAS ==================== */}

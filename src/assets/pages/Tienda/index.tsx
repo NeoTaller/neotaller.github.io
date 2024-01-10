@@ -84,7 +84,7 @@ const Tienda = () => {
       const data  = await getProductos()
       if(!data) return;
       if(filtroOfertas.length !== 0) {
-        setProducts(data.filter((producto) => filtroOfertas.includes(producto.oferta)))
+        setProducts(data.filter((producto) => producto.esOferta == true))
       }else{
         setProducts(data)
       }

@@ -122,39 +122,6 @@ const CreacionProducto = () => {
               <label htmlFor='talla'>Talla</label>
               <input type='text' name='talla' id='talla' placeholder='talla' onChange={handleChange}/>
             </div>
-            {/*
-              <label htmlFor='talla'>Talla</label> 
-              <div className="creacion-info-multiple">
-              <section>
-                <input type="radio" name="talla" id={'talla-xs'} value={'XS'} onSelect={handleChange} />
-                <label htmlFor="talla-xs">XS</label>
-              </section>
-              <section>
-                <input type="radio" name="talla" id={'talla-s'} value={'S'} onSelect={handleChange} />
-                <label htmlFor="talla-xs">S</label>
-              </section>
-              <section>
-                <input type="radio" name="talla" id={'talla-m'} value={'M'} onSelect={handleChange} />
-                <label htmlFor="talla-xs">M</label>
-
-              </section>
-              <section>
-                <input type="radio" name="talla" id={'talla-l'} value={'L'} onSelect={handleChange} />
-                <label htmlFor="talla-xs">L</label>
-
-              </section>
-              <section>
-                <input type="radio" name="talla" id={'talla-xl'} value={'XL'} onSelect={handleChange} />
-                <label htmlFor="talla-xs">XL</label>
-
-              </section>
-              <section>
-                <input type="radio" name="talla" id={'talla-xxl'} value={'XXL'} onSelect={handleChange} />
-                <label htmlFor="talla-xs">XXL</label>
-
-              </section>
-              
-            </div> */}
           </div>
           
           <h2>Especificaciones del producto</h2>

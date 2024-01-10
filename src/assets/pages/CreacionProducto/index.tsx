@@ -65,6 +65,7 @@ const CreacionProducto = () => {
       })
     }).then(res => {
       if (res.ok) {
+        alert("Producto creado")
         return console.log("Producto creado", res.status)
       }
       throw new Error("Error en la creacion del producto")
